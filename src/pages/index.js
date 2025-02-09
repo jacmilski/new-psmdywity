@@ -2,6 +2,7 @@ import * as React from 'react';
 import GlobalStyles from '../styles/GlobalStyles';
 import Seo from '../components/atoms/Seo/Seo';
 import Input from '../components/atoms/Input/Input';
+import Button from '../components/atoms/Button/Button';
 
 const IndexPage = () => {
     return (
@@ -14,6 +15,12 @@ const IndexPage = () => {
                 type="textarea"
                 label="Wiadomość"
                 error="Jakiś error"
+            />
+            <Button
+                text={`Zatwierdź`}
+                onClick={undefined}
+                type={`button`}
+                href={undefined}
             />
         </main>
     );
