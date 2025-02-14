@@ -1,4 +1,11 @@
 const React = require('react');
+const {
+    default: GlobalLayout,
+} = require('./src/components/templates/GlobalLayout/GlobalLayout');
+
+exports.wrapPageElement = ({ element, props }) => {
+    return <GlobalLayout {...props}>{element}</GlobalLayout>;
+};
 
 exports.onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
@@ -69,6 +76,14 @@ exports.onRenderBody = ({ setHeadComponents }) => {
         <link
             rel="preload"
             href="/fonts/Lora-Bold.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+            key="interFont"
+        />,
+        <link
+            rel="preload"
+            href="/fonts/DaysOne-Regular.woff2"
             as="font"
             crossOrigin="anonymous"
             type="font/woff2"
