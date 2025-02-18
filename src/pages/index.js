@@ -1,43 +1,25 @@
 import * as React from 'react';
-import GlobalStyles from '../styles/GlobalStyles';
+import { graphql } from 'gatsby';
 import Seo from '../components/atoms/Seo/Seo';
-import Input from '../components/atoms/Input/Input';
-import Button from '../components/atoms/Button/Button';
-import FilliateLink from '../components/atoms/Link/FilliateLink';
-import HamburgerButton from '../components/atoms/HamburgerButton/HamburgerButton';
+import HeroSection from '../components/organisms/HeroSection/HeroSection';
+import Nav from '../components/organisms/Nav/Nav';
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+    const {
+        datoCmsSekcjaHero: {
+            titleOfHeroImage,
+            heroImage: { gatsbyImageData, alt },
+        },
+    } = data;
+
     return (
         <main>
-            <GlobalStyles />
-            <h1>Welcome to my Gatsby site!</h1>
-            <Input name="name" type="text" label="Imię" error="Jakiś error" />
-            <Input
-                name="name"
-                type="email"
-                label="E-mail"
-                error="Jakiś error"
+            <Nav isOpen />
+            <HeroSection
+                title={titleOfHeroImage}
+                image={gatsbyImageData}
+                alt={alt}
             />
-            <Input
-                name="name"
-                type="textarea"
-                label="Wiadomość"
-                error="Jakiś error"
-            />
-            <Button
-                text={`Gatsby`}
-                onClick={undefined}
-                type={`button`}
-                href={`/`}
-            />
-            <FilliateLink
-                url={undefined}
-                ariaLabel={undefined}
-                className={undefined}
-            >
-                Barczewo
-            </FilliateLink>
-            <HamburgerButton isOpen={undefined} openMenu={undefined} />
         </main>
     );
 };
@@ -45,3 +27,15 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <Seo pathname="/" />;
+
+export const query = graphql`
+    query HomePageQuery {
+        datoCmsSekcjaHero {
+            heroImage {
+                gatsbyImageData
+                alt
+            }
+            titleOfHeroImage
+        }
+    }
+`;

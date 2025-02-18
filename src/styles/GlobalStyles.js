@@ -41,12 +41,19 @@ const GlobalStyles = createGlobalStyle`
         --font-16: 16px;
         --font-18: 18px;
         --font-20: 20px;
+        --font-22: 22px;
         --font-24: 24px;
+        --font-26: 26px;
         --font-28: 28px;
+        --font-30: 30px;
         --font-32: 32px;
+        --font-34: 34px;
         --font-36: 36px;
+        --font-38: 38px;
         --font-40: 40px;
+        --font-42: 42px;
         --font-44: 44px;
+        --font-46: 46px;
         --font-48: 48px;
     }
 
