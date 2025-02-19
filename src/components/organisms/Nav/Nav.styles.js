@@ -13,41 +13,20 @@ export const StyledNav = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 100px;
-    background-color: var(--green-2);
-    z-index: 102;
+    gap: 40px;
+    z-index: 200;
 
     @media only screen and (min-width: 768px) {
         height: auto;
-        width: auto;
+        width: 100%;
         position: relative;
         top: unset;
         left: unset;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-`;
-
-export const StyledLinksWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    padding-left: 68px;
-
-    & Link {
-        color: var(--white);
-    }
-
-    @media only screen and (min-width: 768px) {
-        width: 70%;
+        display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
         flex-wrap: wrap;
-        gap: 10px;
-        padding: none;
+        gap: 0;
     }
 `;

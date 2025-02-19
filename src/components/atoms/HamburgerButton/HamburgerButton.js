@@ -5,18 +5,20 @@ import TransparentHamburgerIcon from '../../../images/icons/hamburger_btn_transp
 // @ts-ignore
 import TransparentCloseButton from '../../../images/icons/close_transparent_50.png';
 
-const HamburgerButton = ({ isOpen = true, openMenu }) => {
+const HamburgerButton = ({ isOpen, openMenu }) => {
     return (
         <StyledHamburgerButton
             aria-label="otwórz menu"
-            onClick={openMenu}
             // @ts-ignore
             $isOpen={isOpen}
+            onClick={openMenu}
+            type="button"
         >
-            <StyledIcon
-                src={isOpen ? TransparentCloseButton : TransparentHamburgerIcon}
-                alt={isOpen ? 'zamknij menu' : 'otwórz menu'}
-            />
+            {isOpen ? (
+                <StyledIcon src={TransparentCloseButton} alt="zamknij menu" />
+            ) : (
+                <StyledIcon src={TransparentHamburgerIcon} alt="otwórz menu" />
+            )}
         </StyledHamburgerButton>
     );
 };

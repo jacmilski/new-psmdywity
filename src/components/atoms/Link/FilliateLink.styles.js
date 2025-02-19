@@ -23,6 +23,11 @@ export const StyledLink = styled(Link)`
     text-transform: uppercase;
     letter-spacing: 0.1em;
     cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--gray);
+    }
 
     @media only screen and (min-width: 768px) {
         font-size: var(--font-20);

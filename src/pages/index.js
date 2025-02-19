@@ -2,7 +2,6 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import Seo from '../components/atoms/Seo/Seo';
 import HeroSection from '../components/organisms/HeroSection/HeroSection';
-import Nav from '../components/organisms/Nav/Nav';
 
 const IndexPage = ({ data }) => {
     const {
@@ -14,7 +13,6 @@ const IndexPage = ({ data }) => {
 
     return (
         <main>
-            <Nav isOpen />
             <HeroSection
                 title={titleOfHeroImage}
                 image={gatsbyImageData}

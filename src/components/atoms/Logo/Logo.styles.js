@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledLogo = styled.div`
-    width: 370px;
+    width: ${({
+        // @ts-ignore
+        $isOpen,
+    }) => ($isOpen ? '370px' : '221px')};
     height: auto;
 
     & img {
@@ -9,11 +12,8 @@ export const StyledLogo = styled.div`
         height: auto;
     }
 
-    @media only screen and (min-width: 576px) {
-        width: 520px;
-    }
-
     @media only screen and (min-width: 768px) {
         width: 221px;
+        height: auto;
     }
 `;

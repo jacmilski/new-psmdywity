@@ -2,10 +2,13 @@ const React = require('react');
 const {
     default: GlobalLayout,
 } = require('./src/components/templates/GlobalLayout/GlobalLayout');
+require('dotenv').config();
 
 exports.wrapPageElement = ({ element, props }) => {
     return <GlobalLayout {...props}>{element}</GlobalLayout>;
 };
+
+const key = `https://kit.fontawesome.com/${process.env.AWESOME_SECRET_CODE}.js`;
 
 exports.onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
@@ -89,5 +92,6 @@ exports.onRenderBody = ({ setHeadComponents }) => {
             type="font/woff2"
             key="interFont"
         />,
+        <script src={key} crossOrigin="anonymous"></script>,
     ]);
 };

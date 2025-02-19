@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 export const StyledHamburgerButton = styled.button`
+    position: absolute;
+    top: ${({
+        // @ts-ignore
+        $isOpen,
+    }) => ($isOpen ? '20px' : '10px')};
+    right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,6 +21,7 @@ export const StyledHamburgerButton = styled.button`
     border: 0;
     outline: none;
     border-radius: 5px;
+    z-index: 1000;
 
     &:focus-visible {
         outline-width: 1px;

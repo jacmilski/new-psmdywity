@@ -3,9 +3,12 @@ import { StyledLogo } from './Logo.styles';
 // @ts-ignore
 import EmblemWithLogo from '../../../images/logo/Logo.png';
 
-const Logo = () => {
+const Logo = ({ isOpen }) => {
     return (
-        <StyledLogo>
+        <StyledLogo
+            // @ts-ignore
+            $isOpen={isOpen}
+        >
             <img src={EmblemWithLogo} alt={`Logo i godło`} />
         </StyledLogo>
     );
