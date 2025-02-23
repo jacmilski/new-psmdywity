@@ -1,17 +1,22 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import FilliateInfoBanner from '../components/organisms/FilliateInfoBanner/FilliateInfoBanner';
+import ContentLayout from '../components/templates/ContentLayout/ContentLayout';
+import Aside from '../components/organisms/Aside/Aside';
+import { NewsContainer, HorizontalDivider } from '../styles/pagesSharedStyles';
+import NewsfeedHeadline from '../components/atoms/NewsFeedHeadline/NewsFeedHeadline';
+import Newsfeed from '../components/organisms/NewsFeed/NewsFeed';
 
 const DywityPage = () => {
-    const { datoCmsCentralaDywity: data } = useStaticQuery(graphql`
+    const { datoCmsDywity: data } = useStaticQuery(graphql`
         query DywityDataQuery {
-            datoCmsCentralaDywity {
-                nazwaSzkoly
-                ulica
-                kodPocztowy
-                nazwaMiasta
-                telefon
-                eMail
+            datoCmsDywity {
+                schoolName
+                street
+                postcode
+                cityName
+                telephone
+                email
                 banner {
                     gatsbyImageData
                     alt
@@ -20,11 +25,66 @@ const DywityPage = () => {
                     gatsbyImageData
                     alt
                 }
+                newsfeedList {
+                    title
+                    messageDate(formatString: "DD MMMM YYYY", locale: "pl-PL")
+                    tag
+                    originalId
+                    message
+                    imageForMessage {
+                        gatsbyImageData
+                        alt
+                    }
+                    imageDescription
+                    videoForMessage {
+                        url
+                    }
+                    videoDescription
+                    filliates {
+                        ... on DatoCmsBarczewo {
+                            originalId
+                            cityName
+                        }
+                        ... on DatoCmsBiskupiec {
+                            originalId
+                            cityName
+                        }
+                        ... on DatoCmsOlsztynek {
+                            originalId
+                            cityName
+                        }
+                        ... on DatoCmsDobreMiasto {
+                            originalId
+                            cityName
+                        }
+                    }
+                }
             }
         }
     `);
-    // @ts-ignore
-    return <FilliateInfoBanner data={data} />;
+
+    return (
+        <>
+            <FilliateInfoBanner data={data} />
+            <ContentLayout>
+                <Aside />
+                <NewsContainer>
+                    <NewsfeedHeadline
+                        title={`Aktualności`}
+                        filliateName={`filia Dywity`}
+                    />
+                    {data.newsfeedList.map((listData) => {
+                        return (
+                            <div key={listData.originalId}>
+                                <Newsfeed data={listData} />
+                                <HorizontalDivider />
+                            </div>
+                        );
+                    })}
+                </NewsContainer>
+            </ContentLayout>
+        </>
+    );
 };
 
 export default DywityPage;

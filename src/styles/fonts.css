@@ -49,6 +49,14 @@
 
 @font-face {
     font-family: 'Lora';
+    font-weight: 600;
+    font-display: swap;
+    font-style: italic;
+    src: url('/fonts/Lora-SemiBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Lora';
     font-weight: 500;
     font-display: swap;
     font-style: normal;

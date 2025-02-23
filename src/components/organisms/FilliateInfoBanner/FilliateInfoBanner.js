@@ -11,12 +11,12 @@ import {
 
 const FilliateInfoBanner = ({ data }) => {
     const {
-        nazwaSzkoly,
-        ulica,
-        kodPocztowy,
-        telefon,
-        eMail,
-        nazwaMiasta,
+        schoolName,
+        street,
+        postcode,
+        telephone,
+        email,
+        cityName,
         banner,
         logo,
     } = data;
@@ -29,22 +29,18 @@ const FilliateInfoBanner = ({ data }) => {
                 alt={banner.alt}
             />
             <StyledFilliateContent>
-                <StyledFilliateTitle>{nazwaSzkoly}</StyledFilliateTitle>
+                <StyledFilliateTitle>{schoolName}</StyledFilliateTitle>
                 <StyledFilliateData>
                     <StyledFilliateInfo>
                         <p>
-                            <span>Adres: ul.</span> {ulica}
-                        </p>
-                        <p>
-                            <span>{kodPocztowy}</span>
+                            <span>Adres: ul.</span> {street}
                             {', '}
-                            <span>{nazwaMiasta}</span>
+                            <span>{postcode}</span> <span>{cityName}</span>
                         </p>
                         <p>
-                            <span>tel.</span> {telefon}
-                        </p>
-                        <p>
-                            <span>E-mail:</span> {eMail}
+                            <span>tel.</span> {telephone}
+                            {', '}
+                            <span>E-mail:</span> {email}
                         </p>
                     </StyledFilliateInfo>
                     <StyledFilliateLogo>

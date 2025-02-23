@@ -8,7 +8,7 @@ exports.wrapPageElement = ({ element, props }) => {
     return <GlobalLayout {...props}>{element}</GlobalLayout>;
 };
 
-const key = `https://kit.fontawesome.com/${process.env.AWESOME_SECRET_CODE}.js`;
+//const key = `https://kit.fontawesome.com/${process.env.AWESOME_SECRET_CODE}.js`;
 
 exports.onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
@@ -62,6 +62,14 @@ exports.onRenderBody = ({ setHeadComponents }) => {
         />,
         <link
             rel="preload"
+            href="/fonts/Lora-SemiBoldItalic.woff2"
+            as="font"
+            crossOrigin="anonymous"
+            type="font/woff2"
+            key="interFont"
+        />,
+        <link
+            rel="preload"
             href="/fonts/Lora-Regular.woff2"
             as="font"
             crossOrigin="anonymous"
@@ -92,6 +100,6 @@ exports.onRenderBody = ({ setHeadComponents }) => {
             type="font/woff2"
             key="interFont"
         />,
-        <script src={key} crossOrigin="anonymous"></script>,
+        // <script src={key} crossOrigin="anonymous"></script>,
     ]);
 };

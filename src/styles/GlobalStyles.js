@@ -24,6 +24,10 @@ const GlobalStyles = createGlobalStyle`
         --yellow-2: #E9B824;
         --orange-2: #EE9322;
         --red-2: #D83F31;
+        --gray-mute: #8e8e8e;
+        --maroon-4: #D10363;
+        --gray-4: #434343;
+        --gray-3: #F5F7F8;
         // new colors -3
         --gray-3: #F5F7F8;
         --yellow-3: #F4CE14;

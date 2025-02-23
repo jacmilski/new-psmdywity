@@ -1,11 +1,11 @@
 import React from 'react';
 import {
     StyledLink,
-    StyledLinkIcon,
+    //StyledLinkIcon,
     StyledLinkWrapper,
 } from './FilliateLink.styles';
 // @ts-ignore
-import CodaSign from '../../../images/icons/coda_sign_40.png';
+//import CodaSign from '../../../images/icons/coda_sign_40.png';
 
 // @ts-ignore
 const FilliateLink = ({ url, children, ariaLabel, className }) => (

@@ -16,6 +16,10 @@ export const StyledFilliateInfoBanner = styled.section`
     @media only screen and (min-width: 576px) {
         height: 60vh;
     }
+
+    @media only screen and (min-width: 768px) {
+        height: 50vh;
+    }
 `;
 
 export const StyledFilliateContent = styled.div`
@@ -45,7 +49,7 @@ export const StyledFilliateTitle = styled.h1`
 export const StyledFilliateData = styled.div`
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 20px;
 `;

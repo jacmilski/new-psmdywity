@@ -3,15 +3,15 @@ import { useStaticQuery, graphql } from 'gatsby';
 import FilliateInfoBanner from '../components/organisms/FilliateInfoBanner/FilliateInfoBanner';
 
 const BiskupiecPage = () => {
-    const { datoCmsFiliaBiskupiec: data } = useStaticQuery(graphql`
+    const { datoCmsBiskupiec: data } = useStaticQuery(graphql`
         query BiskupiecDataQuery {
-            datoCmsFiliaBiskupiec {
-                nazwaSzkoly
-                ulica
-                kodPocztowy
-                nazwaMiasta
-                telefon
-                eMail
+            datoCmsBiskupiec {
+                schoolName
+                street
+                postcode
+                cityName
+                telephone
+                email
                 banner {
                     gatsbyImageData
                     alt
@@ -19,6 +19,38 @@ const BiskupiecPage = () => {
                 logo {
                     gatsbyImageData
                     alt
+                }
+                newsfeedList {
+                    title
+                    messageDate
+                    tag
+                    id
+                    filliates {
+                        ... on DatoCmsOlsztynek {
+                            id
+                            cityName
+                        }
+                        ... on DatoCmsDobreMiasto {
+                            id
+                            cityName
+                        }
+                        ... on DatoCmsDywity {
+                            id
+                            cityName
+                        }
+                        ... on DatoCmsBarczewo {
+                            id
+                            cityName
+                        }
+                    }
+                    message
+                    imageForMessage {
+                        gatsbyImageData
+                        alt
+                    }
+                    videoForMessage {
+                        url
+                    }
                 }
             }
         }
