@@ -2,6 +2,7 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import Seo from '../components/atoms/Seo/Seo';
 import HeroSection from '../components/organisms/HeroSection/HeroSection';
+import AsideMenu from '../components/organisms/AsideMenu/AsideMenu';
 
 const IndexPage = ({ data }) => {
     const {
@@ -18,6 +19,7 @@ const IndexPage = ({ data }) => {
                 image={gatsbyImageData}
                 alt={alt}
             />
+            <AsideMenu />
         </main>
     );
 };
