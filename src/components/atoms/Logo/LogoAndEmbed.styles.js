@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-// @ts-ignore
-import logoImage from '../../../images/logo/logo.png';
 
 export const StyledLogo = styled.div`
     width: ${({
@@ -18,10 +16,4 @@ export const StyledLogo = styled.div`
         width: 221px;
         height: auto;
     }
-`;
-
-export const StyledImg = styled.img`
-    width: 100%;
-    height: auto;
-    background-image: url(${logoImage});
 `;
