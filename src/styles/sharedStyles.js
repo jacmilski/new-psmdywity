@@ -16,7 +16,6 @@ export const newsHeadlineStyles = css`
     font-size: var(--font-34);
     text-align: start;
 
-    ${'' /* możeużyć tu funkcję clamp */}
     @media only screen and (min-width: 576px) {
         font-size: var(--font-38);
     }

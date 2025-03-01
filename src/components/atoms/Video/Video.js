@@ -18,5 +18,3 @@ const Video = ({ url, title }) => (
     </div>
 );
 export default Video;
-
-/* <iframe width="560" height="315" src="https://www.youtube.com/embed/Ry4BzonlVlw?si=7Px4buSj9B8fxQTn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */

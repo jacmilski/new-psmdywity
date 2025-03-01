@@ -8,7 +8,7 @@ const Seo = ({ pathname }) => {
         title: title || ``,
         description: description || ``,
         author: author || ``,
-        image: image, //`${siteUrl}${image}`,
+        image: image || ``,
         url: `${siteUrl}${pathname}`,
     };
 

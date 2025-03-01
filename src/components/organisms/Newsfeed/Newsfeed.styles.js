@@ -43,7 +43,7 @@ export const StyledMediaWrapper = styled.div`
     margin-top: 20px;
 
     & img {
-        object-fit: contain !important; // coś z tym trzeba zrobić
+        object-fit: contain !important;
     }
 
     & p span {

@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyledLogo } from './Logo.styles';
-// @ts-ignore
-import EmblemWithLogo from '../../../images/logo/logo.png';
+import { StyledImg, StyledLogo } from './Logo.styles';
 
 const Logo = ({ isOpen }) => {
     return (
@@ -9,7 +7,7 @@ const Logo = ({ isOpen }) => {
             // @ts-ignore
             $isOpen={isOpen}
         >
-            <img src={EmblemWithLogo} alt={`Logo i godło`} />
+            <StyledImg alt="Logo i Godło" />
         </StyledLogo>
     );
 };

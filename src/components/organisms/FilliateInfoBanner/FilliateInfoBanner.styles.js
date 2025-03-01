@@ -95,7 +95,6 @@ export const StyledFilliateInfo = styled.div`
     @media only screen and (min-width: 768px) {
         gap: 0;
         align-items: flex-start;
-        //margin-left: 30px;
     }
 `;
 

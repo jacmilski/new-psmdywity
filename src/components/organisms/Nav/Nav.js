@@ -2,7 +2,6 @@ import React from 'react';
 import FilliateLink from '../../atoms/Link/FilliateLink';
 import { NavLabels } from './Nav.data';
 import { StyledNav } from './Nav.styles';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Nav = ({ isOpen, closeMenu }) => {
     return (

@@ -8,11 +8,13 @@ import {
 
 const NewsfeedHeadline = ({ title, filliateName }) => {
     return (
-        <StyledNewsfeedHeadline>
-            <StyledTitle>{title}</StyledTitle>
-            <StyledDivider />
-            <StyledFilliateName>{filliateName}</StyledFilliateName>
-        </StyledNewsfeedHeadline>
+        <>
+            <StyledNewsfeedHeadline>
+                <StyledTitle>{title}</StyledTitle>
+                <StyledDivider />
+                <StyledFilliateName>{filliateName}</StyledFilliateName>
+            </StyledNewsfeedHeadline>
+        </>
     );
 };
 

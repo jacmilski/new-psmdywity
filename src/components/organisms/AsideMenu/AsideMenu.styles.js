@@ -3,13 +3,12 @@ import styled from 'styled-components';
 
 export const StyledAsideMenuWrapper = styled.div`
     display: none;
-    background-color: var(--yellow-3); // do usunięcia; // do usunięcia
+    background-color: var(--yellow-3);
     position: stcky;
     top: 450px;
     left: 90px;
     width: 100%;
     min-width: 170px;
-    //padding: 10px;
     z-index: 1000;
 
     @media only screen and (min-width: 768px) {

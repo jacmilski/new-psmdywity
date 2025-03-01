@@ -47,8 +47,6 @@ const AsideMenu = () => {
 
     const [{ elementyMenu: elems }] = nodes;
 
-    console.log(elems);
-
     return (
         <StyledAsideMenuWrapper>
             <GatsbyImage
