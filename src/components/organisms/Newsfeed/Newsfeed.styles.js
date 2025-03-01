@@ -38,8 +38,23 @@ export const StyledNewsfeed = styled.div`
 
 export const StyledMediaWrapper = styled.div`
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    & img {
+        object-fit: contain !important; // coś z tym trzeba zrobić
+    }
 
     & p span {
         margin-right: 5px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        margin-top: 30px;
+
+        & p {
+            margin-top: 20px;
+        }
     }
 `;

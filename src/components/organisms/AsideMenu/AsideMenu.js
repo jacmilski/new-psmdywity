@@ -1,10 +1,17 @@
 // @ts-nocheck
 import * as React from 'react';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { NavigationMenu } from 'radix-ui';
-import classNames from 'classnames';
-import { CaretDownIcon } from '@radix-ui/react-icons';
 import './styles.css';
+import {
+    StyledAsideMenuWrapper,
+    StyledNavigationMenuContent,
+    StyledNavigationMenuItem,
+    StyledNavigationMenuList,
+    StyledNavigationMenuRoot,
+    StyledNavigationMenuTrigger,
+    StyledNavigationMenuSub,
+} from './AsideMenu.styles';
 
 const AsideMenu = () => {
     const {
@@ -13,6 +20,11 @@ const AsideMenu = () => {
         query AsideMenuQuery {
             allDatoCmsAsideMenu {
                 nodes {
+                    asideMenuBackground {
+                        alt
+                        title
+                        gatsbyImageData
+                    }
                     elementyMenu {
                         title
                         slug
@@ -38,74 +50,106 @@ const AsideMenu = () => {
     console.log(elems);
 
     return (
-        <NavigationMenu.Root orientation="vertical">
-            <NavigationMenu.List>
-                {elems.map(({ title, slug, originalId, submenuElement }) => (
-                    <NavigationMenu.Item key={originalId}>
-                        <NavigationMenu.Trigger>
-                            <Link to={`/${slug}/`}>{title}</Link>
-                        </NavigationMenu.Trigger>
-                        <NavigationMenu.Content>
-                            <NavigationMenu.Sub defaultValue="sub1">
-                                <NavigationMenu.List>
-                                    {submenuElement.map(
-                                        ({
-                                            title,
-                                            slug,
-                                            originalId,
-                                            submenuElement,
-                                        }) =>
-                                            slug ? (
-                                                <NavigationMenu.Item
-                                                    value="sub1"
-                                                    key={originalId}
-                                                >
-                                                    <NavigationMenu.Trigger>
-                                                        <Link to={`/${slug}/`}>
-                                                            {title}
-                                                        </Link>
-                                                    </NavigationMenu.Trigger>
-                                                    <NavigationMenu.Content>
-                                                        <NavigationMenu.Sub value="sub2">
-                                                            <NavigationMenu.List>
-                                                                {submenuElement.map(
-                                                                    ({
-                                                                        title,
-                                                                        slug,
-                                                                        originalId,
-                                                                    }) =>
-                                                                        slug ? (
-                                                                            <NavigationMenu.Item
-                                                                                value="sub3"
-                                                                                key={
-                                                                                    originalId
-                                                                                }
-                                                                            >
-                                                                                <NavigationMenu.Trigger>
-                                                                                    <Link
-                                                                                        to={`/${slug}/`}
-                                                                                    >
-                                                                                        {
-                                                                                            title
+        <StyledAsideMenuWrapper>
+            <GatsbyImage
+                image={getImage(nodes[0].asideMenuBackground)}
+                alt={nodes[0].asideMenuBackground.alt}
+            />
+            <GatsbyImage
+                image={getImage(nodes[0].asideMenuBackground)}
+                alt={nodes[0].asideMenuBackground.alt}
+                className="note-2"
+            />
+            <GatsbyImage
+                image={getImage(nodes[0].asideMenuBackground)}
+                alt={nodes[0].asideMenuBackground.alt}
+                className="note-3"
+            />
+            <StyledNavigationMenuRoot orientation="vertical">
+                <StyledNavigationMenuList>
+                    {elems.map(
+                        ({ title, slug, originalId, submenuElement }) => (
+                            <StyledNavigationMenuItem key={originalId}>
+                                <StyledNavigationMenuTrigger>
+                                    <Link
+                                        to={
+                                            slug === 'kadra-szkoly' ||
+                                            slug === 'szkola' ||
+                                            slug === 'nasze-osiagniecia' ||
+                                            slug === 'archiwum-wydarzen' ||
+                                            slug === 'przepisy-szkolne'
+                                                ? '#'
+                                                : `/${slug}/`
+                                        }
+                                    >
+                                        {title}
+                                    </Link>
+                                </StyledNavigationMenuTrigger>
+                                <StyledNavigationMenuContent>
+                                    <StyledNavigationMenuSub defaultValue="sub1">
+                                        <StyledNavigationMenuList>
+                                            {submenuElement.map(
+                                                ({
+                                                    title,
+                                                    slug,
+                                                    originalId,
+                                                    submenuElement,
+                                                }) =>
+                                                    slug ? (
+                                                        <StyledNavigationMenuItem
+                                                            value="sub1"
+                                                            key={originalId}
+                                                        >
+                                                            <StyledNavigationMenuTrigger>
+                                                                <Link
+                                                                    to={`/${slug}/`}
+                                                                >
+                                                                    {title}
+                                                                </Link>
+                                                            </StyledNavigationMenuTrigger>
+                                                            <StyledNavigationMenuContent>
+                                                                <StyledNavigationMenuSub value="sub2">
+                                                                    <StyledNavigationMenuList>
+                                                                        {submenuElement.map(
+                                                                            ({
+                                                                                title,
+                                                                                slug,
+                                                                                originalId,
+                                                                            }) =>
+                                                                                slug ? (
+                                                                                    <StyledNavigationMenuItem
+                                                                                        value="sub3"
+                                                                                        key={
+                                                                                            originalId
                                                                                         }
-                                                                                    </Link>
-                                                                                </NavigationMenu.Trigger>
-                                                                            </NavigationMenu.Item>
-                                                                        ) : null
-                                                                )}
-                                                            </NavigationMenu.List>
-                                                        </NavigationMenu.Sub>
-                                                    </NavigationMenu.Content>
-                                                </NavigationMenu.Item>
-                                            ) : null
-                                    )}
-                                </NavigationMenu.List>
-                            </NavigationMenu.Sub>
-                        </NavigationMenu.Content>
-                    </NavigationMenu.Item>
-                ))}
-            </NavigationMenu.List>
-        </NavigationMenu.Root>
+                                                                                    >
+                                                                                        <StyledNavigationMenuTrigger>
+                                                                                            <Link
+                                                                                                to={`/${slug}/`}
+                                                                                            >
+                                                                                                {
+                                                                                                    title
+                                                                                                }
+                                                                                            </Link>
+                                                                                        </StyledNavigationMenuTrigger>
+                                                                                    </StyledNavigationMenuItem>
+                                                                                ) : null
+                                                                        )}
+                                                                    </StyledNavigationMenuList>
+                                                                </StyledNavigationMenuSub>
+                                                            </StyledNavigationMenuContent>
+                                                        </StyledNavigationMenuItem>
+                                                    ) : null
+                                            )}
+                                        </StyledNavigationMenuList>
+                                    </StyledNavigationMenuSub>
+                                </StyledNavigationMenuContent>
+                            </StyledNavigationMenuItem>
+                        )
+                    )}
+                </StyledNavigationMenuList>
+            </StyledNavigationMenuRoot>
+        </StyledAsideMenuWrapper>
     );
 };
 

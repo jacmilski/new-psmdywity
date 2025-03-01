@@ -27,20 +27,24 @@ const FilliateInfoBanner = ({ data }) => {
                 // @ts-ignore
                 image={getImage(banner.gatsbyImageData)}
                 alt={banner.alt}
+                className="background"
             />
+            <StyledFilliateTitle>{schoolName}</StyledFilliateTitle>
             <StyledFilliateContent>
-                <StyledFilliateTitle>{schoolName}</StyledFilliateTitle>
                 <StyledFilliateData>
                     <StyledFilliateInfo>
                         <p>
-                            <span>Adres: ul.</span> {street}
+                            <span>Adres: ul.</span> <span>{street}</span>
                             {', '}
-                            <span>{postcode}</span> <span>{cityName}</span>
                         </p>
                         <p>
-                            <span>tel.</span> {telephone}
-                            {', '}
-                            <span>E-mail:</span> {email}
+                            <span>{postcode}</span> <span>{cityName} </span>
+                        </p>
+                        <p>
+                            <span>tel.</span> <span>{telephone}</span>
+                        </p>
+                        <p>
+                            <span>E-mail:</span> <span>{email}</span>
                         </p>
                     </StyledFilliateInfo>
                     <StyledFilliateLogo>

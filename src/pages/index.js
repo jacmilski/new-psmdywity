@@ -2,7 +2,6 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import Seo from '../components/atoms/Seo/Seo';
 import HeroSection from '../components/organisms/HeroSection/HeroSection';
-import AsideMenu from '../components/organisms/AsideMenu/AsideMenu';
 
 const IndexPage = ({ data }) => {
     const {
@@ -13,13 +12,12 @@ const IndexPage = ({ data }) => {
     } = data;
 
     return (
-        <main>
+        <main style={{ position: 'relative' }}>
             <HeroSection
                 title={titleOfHeroImage}
                 image={gatsbyImageData}
                 alt={alt}
             />
-            <AsideMenu />
         </main>
     );
 };

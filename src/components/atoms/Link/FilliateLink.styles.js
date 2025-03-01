@@ -30,7 +30,7 @@ export const StyledLink = styled(Link)`
     }
 
     @media only screen and (min-width: 768px) {
-        font-size: var(--font-20);
+        font-size: var(--font-16);
         margin-right: 20px;
     }
 `;
