@@ -4,7 +4,7 @@ import {
     StyledFilliateName,
     StyledNewsfeedHeadline,
     StyledTitle,
-} from './NewsFeedHeadline.styles';
+} from './NewsfeedHeadline.styles';
 
 const NewsfeedHeadline = ({ title, filliateName }) => {
     return (
