@@ -4,8 +4,8 @@ import FilliateInfoBanner from '../components/organisms/FilliateInfoBanner/Filli
 import ContentLayout from '../components/templates/ContentLayout/ContentLayout';
 import Aside from '../components/organisms/Aside/Aside';
 import { NewsContainer, HorizontalDivider } from '../styles/pagesSharedStyles';
-import NewsfeedHeadline from '../components/atoms/NewsFeedHeadline/NewsFeedHeadline';
-import Newsfeed from '../components/organisms/NewsFeed/NewsFeed';
+import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
+import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
 
 const DywityPage = () => {
     const { datoCmsDywity: data } = useStaticQuery(graphql`

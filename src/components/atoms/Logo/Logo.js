@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledLogo } from './Logo.styles';
 // @ts-ignore
-import EmblemWithLogo from '../../../images/logo/Logo.png';
+import EmblemWithLogo from '../../../images/logo/logo.png';
 
 const Logo = ({ isOpen }) => {
     return (
