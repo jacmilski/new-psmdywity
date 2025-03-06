@@ -26,7 +26,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 element.slug === 'oferty-pracy' ||
                 element.slug === 'rekrutacja' ||
                 element.slug === 'odwolane-zajecia' ||
-                element.slug === 'adres-do-doreczen'
+                element.slug === 'adres-do-doreczen' ||
+                element.slug === 'muzyk-i-klasa-dokumenty'
             ) {
                 createPage({
                     path: `/${element.slug}`,
@@ -74,12 +75,13 @@ exports.createPages = async ({ graphql, actions }) => {
                     subelement.slug === 'dyplomy' ||
                     subelement.slug === 'artykuly' ||
                     subelement.slug === 'afisze' ||
-                    subelement.slug === 'statut-etc' ||
+                    subelement.slug === 'dokumenty-szkolne' ||
                     subelement.slug === 'organ-prowadzacy' ||
                     subelement.slug === 'organ-nadzorujacy' ||
                     subelement.slug === 'ochrona-danych' ||
                     subelement.slug === 'deklaracja-dostepnosci' ||
-                    subelement.slug === 'adres-do-doreczen'
+                    subelement.slug === 'adres-do-doreczen' ||
+                    subelement.slug === 'muzyk-i-klasa-galeria'
                 ) {
                     createPage({
                         path: `/${subelement.slug}`,
@@ -97,5 +99,3 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     });
 };
-
-/*  */

@@ -1,6 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import FilliateInfoBanner from '../components/organisms/FilliateInfoBanner/FilliateInfoBanner';
+import ContentLayout from '../components/templates/ContentLayout/ContentLayout';
+import Aside from '../components/organisms/Aside/Aside';
+import { HorizontalDivider, NewsContainer } from '../styles/pagesSharedStyles';
+import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
+import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
 
 const OlsztynekPage = () => {
     const { datoCmsOlsztynek: data } = useStaticQuery(graphql`
@@ -56,7 +61,28 @@ const OlsztynekPage = () => {
         }
     `);
     // @ts-ignore
-    return <FilliateInfoBanner data={data} />;
+    return (
+        <>
+            <FilliateInfoBanner data={data} />
+            <ContentLayout>
+                <Aside />
+                <NewsContainer>
+                    <NewsfeedHeadline
+                        title={`Aktualności`}
+                        filliateName={`filia Olsztynek`}
+                    />
+                    {data.newsfeedList.map((listData) => {
+                        return (
+                            <div key={listData.originalId}>
+                                <Newsfeed data={listData} />
+                                <HorizontalDivider />
+                            </div>
+                        );
+                    })}
+                </NewsContainer>
+            </ContentLayout>
+        </>
+    );
 };
 
 export default OlsztynekPage;

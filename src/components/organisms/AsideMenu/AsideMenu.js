@@ -29,6 +29,24 @@ const AsideMenu = () => {
                         title
                         slug
                         originalId
+                        webPageLink {
+                            ... on DatoCmsSkarbnicaPomyslow {
+                                id
+                                webPageAddress
+                            }
+                            ... on DatoCmsStrefaTworczosci {
+                                id
+                                webPageAddress
+                            }
+                            ... on DatoCmsCea {
+                                id
+                                webPageAddress
+                            }
+                            ... on DatoCmsDziennikElektroniczny {
+                                id
+                                webPageAddress
+                            }
+                        }
                         submenuElement {
                             title
                             slug
@@ -44,6 +62,8 @@ const AsideMenu = () => {
             }
         }
     `);
+
+    //console.log(nodes);
 
     const [{ elementyMenu: elems }] = nodes;
 
@@ -66,22 +86,38 @@ const AsideMenu = () => {
             <StyledNavigationMenuRoot orientation="vertical">
                 <StyledNavigationMenuList>
                     {elems.map(
-                        ({ title, slug, originalId, submenuElement }) => (
+                        ({
+                            title,
+                            slug,
+                            originalId,
+                            webPageLink,
+                            submenuElement,
+                        }) => (
                             <StyledNavigationMenuItem key={originalId}>
                                 <StyledNavigationMenuTrigger>
-                                    <Link
-                                        to={
-                                            slug === 'kadra-szkoly' ||
-                                            slug === 'szkola' ||
-                                            slug === 'nasze-osiagniecia' ||
-                                            slug === 'archiwum-wydarzen' ||
-                                            slug === 'przepisy-szkolne'
-                                                ? '#'
-                                                : `/${slug}/`
-                                        }
-                                    >
-                                        {title}
-                                    </Link>
+                                    {(webPageLink &&
+                                        slug === 'skarbnica-pomyslow') ||
+                                    slug === 'strefa-tworczosci' ||
+                                    slug === 'cea' ||
+                                    slug === 'dziennik-elektroniczny' ? (
+                                        <a href={webPageLink.webPageAddress}>
+                                            {title}
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            to={
+                                                slug === 'kadra-szkoly' ||
+                                                slug === 'szkola' ||
+                                                slug === 'nasze-osiagniecia' ||
+                                                slug === 'archiwum-wydarzen' ||
+                                                slug === 'przepisy-szkolne'
+                                                    ? '#'
+                                                    : `/${slug}/`
+                                            }
+                                        >
+                                            {title}
+                                        </Link>
+                                    )}
                                 </StyledNavigationMenuTrigger>
                                 <StyledNavigationMenuContent>
                                     <StyledNavigationMenuSub defaultValue="sub1">

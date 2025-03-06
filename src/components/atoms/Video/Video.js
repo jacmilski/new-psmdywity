@@ -10,10 +10,10 @@ const Video = ({ url, title }) => (
             webkitallowfullscreen="true"
             mozallowfullscreen="true"
             allowFullScreen
-            frameborder="0"
+            frameBorder="0"
             width="100%"
             height="350px"
-            referrerpolicy="strict-origin-when-cross-origin"
+            referrerPolicy="strict-origin-when-cross-origin"
         />
     </div>
 );

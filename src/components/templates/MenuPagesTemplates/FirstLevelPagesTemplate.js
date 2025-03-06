@@ -1,14 +1,31 @@
+// @ts-nocheck
 import React from 'react';
+import MenuItemsInnerTemplate from './MenuItemsInnerTemplate';
+import PlanOfLessons from '../../molecules/MenuComponents/PlanOfLessons/PlanOfLessons';
+import JobOffers from '../../molecules/MenuComponents/JobOffers/JobOffers';
+import Recruitment from '../../molecules/MenuComponents/Recruitment/Recruitment';
+import DeliveringAddress from '../../molecules/MenuComponents/DeliveringAddress/DeliveringAddress';
+import MusicianFirstClassDocs from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassDocs';
 
 const FirstLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
 }) => {
+    console.log(slug);
     return (
-        <div>
-            <h2>Tytuł: {title}</h2>
-            <h3>Slug: {slug}</h3>
-            <h3>ID: {originalId}</h3>
-        </div>
+        // @ts-ignore
+        <MenuItemsInnerTemplate title={title}>
+            {slug === 'plan-zajec' ? (
+                <PlanOfLessons />
+            ) : slug === 'oferty-pracy' ? (
+                <JobOffers />
+            ) : slug === 'rekrutacja' ? (
+                <Recruitment />
+            ) : slug === 'adres-do-doreczen' ? (
+                <DeliveringAddress />
+            ) : slug === 'muzyk-i-klasa-dokumenty' ? (
+                <MusicianFirstClassDocs />
+            ) : null}
+        </MenuItemsInnerTemplate>
     );
 };
 
