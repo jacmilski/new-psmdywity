@@ -3,7 +3,6 @@ module.exports = {
     LESSON_PLANS: 'plan-zajec',
     JOB_OFFERS: 'oferty-pracy',
     RECRUITMENT: 'rekrutacja',
-    CANCELLED_LESSONS: 'odwolane-zajecia',
     DELIVERING_ADDRESS: 'adres-do-doreczen',
     MUSICIAN_FIRST_CLASS_DOCUMENTS: 'muzyk-i-klasa-dokumenty',
     LEADERS: 'kierownicy-sekcji',

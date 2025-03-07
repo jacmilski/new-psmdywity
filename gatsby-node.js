@@ -27,7 +27,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 element.slug === labels.LESSON_PLANS ||
                 element.slug === labels.JOB_OFFERS ||
                 element.slug === labels.RECRUITMENT ||
-                element.slug === labels.CANCELLED_LESSONS ||
                 element.slug === labels.DELIVERING_ADDRESS ||
                 element.slug === labels.MUSICIAN_FIRST_CLASS_DOCUMENTS
             ) {
