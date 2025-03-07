@@ -12,7 +12,7 @@ import {
     StyledNavigationMenuTrigger,
     StyledNavigationMenuSub,
 } from './AsideMenu.styles';
-import { labels } from '../../../utilities/labels';
+import labels from '../../../utilities/labels';
 
 const AsideMenu = () => {
     const {

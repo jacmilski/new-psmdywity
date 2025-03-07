@@ -1,6 +1,3 @@
-const labels = require('./labels');
-
-// @ts-nocheck
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -23,12 +20,12 @@ exports.createPages = async ({ graphql, actions }) => {
     firstLevelMenu.data.allDatoCmsAsideMenu.edges.map(({ node }) => {
         node.elementyMenu.map((element) => {
             if (
-                element.slug === labels.MUSICIAN_FIRST_CLASS ||
-                element.slug === labels.LESSON_PLANS ||
-                element.slug === labels.JOB_OFFERS ||
-                element.slug === labels.RECRUITMENT ||
-                element.slug === labels.DELIVERING_ADDRESS ||
-                element.slug === labels.MUSICIAN_FIRST_CLASS_DOCUMENTS
+                element.slug === 'muzyk-i-klasa' ||
+                element.slug === 'plan-zajec' ||
+                element.slug === 'oferty-pracy' ||
+                element.slug === 'rekrutacja' ||
+                element.slug === 'adres-do-doreczen' ||
+                element.slug === 'muzyk-i-klasa-dokumenty'
             ) {
                 createPage({
                     path: `/${element.slug}`,
@@ -67,22 +64,22 @@ exports.createPages = async ({ graphql, actions }) => {
         node.elementyMenu.map(({ submenuElement }) => {
             submenuElement.map((subelement) => {
                 if (
-                    subelement.slug === labels.LEADERS ||
-                    subelement.slug === labels.DIRECTORS ||
-                    subelement.slug === labels.TEACHERS ||
-                    subelement.slug === labels.ADMINISTRATION ||
-                    subelement.slug === labels.BASIC_INFORMATION ||
-                    subelement.slug === labels.BUILDING ||
-                    subelement.slug === labels.DIPLOMAS ||
-                    subelement.slug === labels.ARTICLES ||
-                    subelement.slug === labels.POSTERS ||
-                    subelement.slug === labels.SCHOOL_DOCUMENTS ||
-                    subelement.slug === labels.LEADING_ORGAN ||
-                    subelement.slug === labels.SUPERVISORY_ORGAN ||
-                    subelement.slug === labels.DATA_PROTECTION ||
-                    subelement.slug === labels.ACCESSIBILITY_DECLARATION ||
-                    subelement.slug === labels.DELIVERING_ADDRESS ||
-                    subelement.slug === labels.MUSICIAN_FIRST_CLASS_GALLERY
+                    subelement.slug === 'kierownicy-sekcji' ||
+                    subelement.slug === 'dyrekcja' ||
+                    subelement.slug === 'pedagodzy' ||
+                    subelement.slug === 'administracja' ||
+                    subelement.slug === 'podstawowe-informacje' ||
+                    subelement.slug === 'budowa-siedziby' ||
+                    subelement.slug === 'dyplomy' ||
+                    subelement.slug === 'artykuly' ||
+                    subelement.slug === 'afisze' ||
+                    subelement.slug === 'dokumenty-szkolne' ||
+                    subelement.slug === 'organ-prowadzacy' ||
+                    subelement.slug === 'organ-nadzorujacy' ||
+                    subelement.slug === 'ochrona-danych' ||
+                    subelement.slug === 'deklaracja-dostepnosci' ||
+                    subelement.slug === 'adres-do-doreczen' ||
+                    subelement.slug === 'muzyk-i-klasa-galeria'
                 ) {
                     createPage({
                         path: `/${subelement.slug}`,

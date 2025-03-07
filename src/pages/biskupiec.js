@@ -6,7 +6,6 @@ import Aside from '../components/organisms/Aside/Aside';
 import { HorizontalDivider, NewsContainer } from '../styles/pagesSharedStyles';
 import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
 import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
-import labels from './labels';
 
 const BiskupiecPage = () => {
     const { datoCmsBiskupiec: data } = useStaticQuery(graphql`
@@ -69,8 +68,8 @@ const BiskupiecPage = () => {
                 <Aside />
                 <NewsContainer>
                     <NewsfeedHeadline
-                        title={labels.ACTUALITY}
-                        filliateName={labels.FILLIATE_BISKUPIEC}
+                        title="Aktualności"
+                        filliateName="filia Biskupiec"
                     />
                     {data.newsfeedList.map((listData) => {
                         return (

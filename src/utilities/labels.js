@@ -1,4 +1,4 @@
-export const labels = {
+const labels = {
     MUSICIAN_FIRST_CLASS: 'muzyk-i-klasa',
     LESSON_PLANS: 'plan-zajec',
     JOB_OFFERS: 'oferty-pracy',
@@ -30,3 +30,5 @@ export const labels = {
     EVENTS_ARCHIVE: 'archiwum-wydarzen',
     SCHOOL_REGULATIONS: 'przepisy-szkolne',
 };
+
+export default labels;

@@ -15,7 +15,6 @@ import SupervisingOrgan from '../../molecules/MenuComponents/SupervisingOrgan/Su
 import DataSecurity from '../../molecules/MenuComponents/DataSecurity/DataSecurity';
 import AccessibilityDeclaration from '../../molecules/MenuComponents/AccessibilityDeclaration/AccessibilityDeclaration';
 import MusicianFirstClassGallery from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassGallery';
-import { labels } from '../../../utilities/labels';
 
 const SecondLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
@@ -23,35 +22,35 @@ const SecondLevelPagesTemplate = ({
     return (
         // @ts-ignore
         <MenuItemsInnerTemplate title={title}>
-            {slug === labels.DIRECTORS ? (
+            {slug === 'dyrekcja' ? (
                 <Directors />
-            ) : slug === labels.LEADERS ? (
+            ) : slug === 'kierownicy-sekcji' ? (
                 <Leaders />
-            ) : slug === labels.TEACHERS ? (
+            ) : slug === 'pedagodzy' ? (
                 <Teachers />
-            ) : slug === labels.ADMINISTRATION ? (
+            ) : slug === 'administracja' ? (
                 <Administration />
-            ) : slug === labels.BASIC_INFORMATION ? (
+            ) : slug === 'podstawowe-informacje' ? (
                 <BasicInformation />
-            ) : slug === labels.BUILDING ? (
+            ) : slug === 'budowa-siedziby' ? (
                 <NewResidence />
-            ) : slug === labels.DIPLOMAS ? (
+            ) : slug === 'dyplomy' ? (
                 <Diplomas />
-            ) : slug === labels.ARTICLES ? (
+            ) : slug === 'artykuly' ? (
                 <Articles />
-            ) : slug === labels.POSTERS ? (
+            ) : slug === 'afisze' ? (
                 <Posters />
-            ) : slug === labels.SCHOOL_DOCUMENTS ? (
+            ) : slug === 'dokumenty-szkolne' ? (
                 <SchoolDocuments />
-            ) : slug === labels.LEADING_ORGAN ? (
+            ) : slug === 'organ-prowadzacy' ? (
                 <ProvideringOrgan />
-            ) : slug === labels.SUPERVISORY_ORGAN ? (
+            ) : slug === 'organ-nadzorujacy' ? (
                 <SupervisingOrgan />
-            ) : slug === labels.DATA_PROTECTION ? (
+            ) : slug === 'ochrona-danych' ? (
                 <DataSecurity />
-            ) : slug === labels.ACCESSIBILITY_DECLARATION ? (
+            ) : slug === 'deklaracja-dostepnosci' ? (
                 <AccessibilityDeclaration />
-            ) : slug === labels.MUSICIAN_FIRST_CLASS_GALLERY ? (
+            ) : slug === 'muzyk-i-klasa-galeria' ? (
                 <MusicianFirstClassGallery />
             ) : null}
         </MenuItemsInnerTemplate>

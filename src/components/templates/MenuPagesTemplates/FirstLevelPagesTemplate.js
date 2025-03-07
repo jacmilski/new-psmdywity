@@ -6,7 +6,6 @@ import JobOffers from '../../molecules/MenuComponents/JobOffers/JobOffers';
 import Recruitment from '../../molecules/MenuComponents/Recruitment/Recruitment';
 import DeliveringAddress from '../../molecules/MenuComponents/DeliveringAddress/DeliveringAddress';
 import MusicianFirstClassDocs from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassDocs';
-import { labels } from '../../../utilities/labels';
 
 const FirstLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
@@ -15,15 +14,15 @@ const FirstLevelPagesTemplate = ({
     return (
         // @ts-ignore
         <MenuItemsInnerTemplate title={title}>
-            {slug && slug === labels.LESSON_PLANS ? (
+            {slug && slug === 'plan-zajec' ? (
                 <PlanOfLessons />
-            ) : slug === labels.JOB_OFFERS ? (
+            ) : slug === 'oferty-pracy' ? (
                 <JobOffers />
-            ) : slug === labels.RECRUITMENT ? (
+            ) : slug === 'rekrutacja' ? (
                 <Recruitment />
-            ) : slug === labels.DELIVERING_ADDRESS ? (
+            ) : slug === 'adres-do-doreczen' ? (
                 <DeliveringAddress />
-            ) : slug === labels.MUSICIAN_FIRST_CLASS_DOCUMENTS ? (
+            ) : slug === 'muzyk-i-klasa-dokumenty' ? (
                 <MusicianFirstClassDocs />
             ) : null}
         </MenuItemsInnerTemplate>

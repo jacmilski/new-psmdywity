@@ -21,7 +21,7 @@ const Button = ({ text, onClick, type, href }) =>
         <StyledButtonWrapper>
             <StyledIcon
                 src={GClefIcon}
-                alt={labels.VIOLIN_CLEF} // @ts-ignore
+                alt="violin-clef" // @ts-ignore
                 $variant={labels.VIOLIN_CLEF}
             />
             <StyledButton type={type} onClick={onClick}>
