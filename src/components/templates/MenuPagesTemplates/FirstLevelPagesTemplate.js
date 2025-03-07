@@ -16,7 +16,7 @@ const FirstLevelPagesTemplate = ({
     return (
         // @ts-ignore
         <MenuItemsInnerTemplate title={title}>
-            {slug === labels.LESSON_PLANS ? (
+            {slug && slug === labels.LESSON_PLANS ? (
                 <PlanOfLessons />
             ) : slug === labels.JOB_OFFERS ? (
                 <JobOffers />
