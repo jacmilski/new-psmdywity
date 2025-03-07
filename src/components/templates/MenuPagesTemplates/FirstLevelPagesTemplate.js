@@ -6,6 +6,8 @@ import JobOffers from '../../molecules/MenuComponents/JobOffers/JobOffers';
 import Recruitment from '../../molecules/MenuComponents/Recruitment/Recruitment';
 import DeliveringAddress from '../../molecules/MenuComponents/DeliveringAddress/DeliveringAddress';
 import MusicianFirstClassDocs from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassDocs';
+import { labels } from '../../../utilities/labels';
+import CanceledLessons from '../../molecules/MenuComponents/CancelledLessons/CanceledLessons';
 
 const FirstLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
@@ -14,16 +16,18 @@ const FirstLevelPagesTemplate = ({
     return (
         // @ts-ignore
         <MenuItemsInnerTemplate title={title}>
-            {slug === 'plan-zajec' ? (
+            {slug === labels.LESSON_PLANS ? (
                 <PlanOfLessons />
-            ) : slug === 'oferty-pracy' ? (
+            ) : slug === labels.JOB_OFFERS ? (
                 <JobOffers />
-            ) : slug === 'rekrutacja' ? (
+            ) : slug === labels.RECRUITMENT ? (
                 <Recruitment />
-            ) : slug === 'adres-do-doreczen' ? (
+            ) : slug === labels.DELIVERING_ADDRESS ? (
                 <DeliveringAddress />
-            ) : slug === 'muzyk-i-klasa-dokumenty' ? (
+            ) : slug === labels.MUSICIAN_FIRST_CLASS_DOCUMENTS ? (
                 <MusicianFirstClassDocs />
+            ) : slug === labels.CANCELLED_LESSONS ? (
+                <CanceledLessons />
             ) : null}
         </MenuItemsInnerTemplate>
     );

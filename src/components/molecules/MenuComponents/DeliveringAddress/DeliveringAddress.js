@@ -1,6 +1,8 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { StyledDeliveringAddress } from './DeliveringAddress.styles';
+import Heading from '../../../atoms/Headings/Heading';
+import InfoBadge from '../../../atoms/InfoBadge/InfoBadge';
 
 const DeliveringAddress = () => {
     const {
@@ -18,12 +20,8 @@ const DeliveringAddress = () => {
 
     return (
         <StyledDeliveringAddress>
-            <h3>{title}</h3>
-            <div>
-                <span>{validDate}</span> <span>{date}</span>
-                {' | '}
-                <Link to="/">Start</Link>
-            </div>
+            <Heading type="h2" title={title} />
+            <InfoBadge text={validDate} date={date} url="/" label="Start" />
             <p>{address}</p>
         </StyledDeliveringAddress>
     );

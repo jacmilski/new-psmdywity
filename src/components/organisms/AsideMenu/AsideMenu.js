@@ -12,6 +12,7 @@ import {
     StyledNavigationMenuTrigger,
     StyledNavigationMenuSub,
 } from './AsideMenu.styles';
+import { labels } from '../../../utilities/labels';
 
 const AsideMenu = () => {
     const {
@@ -51,6 +52,17 @@ const AsideMenu = () => {
                             title
                             slug
                             originalId
+                            webPageLink {
+                                ... on DatoCmsSupervisoryOrgan {
+                                    webPageAddress
+                                    originalId
+                                }
+                                ... on DatoCmsProvideringOrgan {
+                                    id
+                                    webPageAddress
+                                    originalId
+                                }
+                            }
                             submenuElement {
                                 title
                                 slug
@@ -96,21 +108,32 @@ const AsideMenu = () => {
                             <StyledNavigationMenuItem key={originalId}>
                                 <StyledNavigationMenuTrigger>
                                     {(webPageLink &&
-                                        slug === 'skarbnica-pomyslow') ||
-                                    slug === 'strefa-tworczosci' ||
-                                    slug === 'cea' ||
-                                    slug === 'dziennik-elektroniczny' ? (
-                                        <a href={webPageLink.webPageAddress}>
+                                        slug === labels.TREASURY_OF_IDEAS) ||
+                                    slug === labels.CREATIVITY_ZONE ||
+                                    slug === labels.EVENTS_ARCHIVE ||
+                                    slug === labels.CEA ||
+                                    slug === labels.ELECTRONIC_DIARY ? (
+                                        <a
+                                            href={
+                                                webPageLink &&
+                                                webPageLink.webPageAddress
+                                            }
+                                            target="_blanc"
+                                            rel="noreferrer"
+                                        >
                                             {title}
                                         </a>
                                     ) : (
                                         <Link
                                             to={
-                                                slug === 'kadra-szkoly' ||
-                                                slug === 'szkola' ||
-                                                slug === 'nasze-osiagniecia' ||
-                                                slug === 'archiwum-wydarzen' ||
-                                                slug === 'przepisy-szkolne'
+                                                slug === labels.SCHOOL_STAFF ||
+                                                slug === labels.SCHOOL ||
+                                                slug ===
+                                                    labels.OUR_ACHIEVEMENTS ||
+                                                slug ===
+                                                    labels.EVENTS_ARCHIVE ||
+                                                slug ===
+                                                    labels.SCHOOL_REGULATIONS
                                                     ? '#'
                                                     : `/${slug}/`
                                             }
@@ -127,6 +150,7 @@ const AsideMenu = () => {
                                                     title,
                                                     slug,
                                                     originalId,
+                                                    webPageLink,
                                                     submenuElement,
                                                 }) =>
                                                     slug ? (
@@ -135,11 +159,36 @@ const AsideMenu = () => {
                                                             key={originalId}
                                                         >
                                                             <StyledNavigationMenuTrigger>
-                                                                <Link
-                                                                    to={`/${slug}/`}
-                                                                >
-                                                                    {title}
-                                                                </Link>
+                                                                {webPageLink &&
+                                                                slug ===
+                                                                    labels.LEADING_ORGAN ? (
+                                                                    <a
+                                                                        href={
+                                                                            webPageLink.webPageAddress
+                                                                        }
+                                                                        target="_blanc"
+                                                                        rel="noreferrer"
+                                                                    >
+                                                                        {title}
+                                                                    </a>
+                                                                ) : slug ===
+                                                                  labels.SUPERVISORY_ORGAN ? (
+                                                                    <a
+                                                                        href={
+                                                                            webPageLink.webPageAddress
+                                                                        }
+                                                                        target="_blanc"
+                                                                        rel="noreferrer"
+                                                                    >
+                                                                        {title}
+                                                                    </a>
+                                                                ) : (
+                                                                    <Link
+                                                                        to={`/${slug}/`}
+                                                                    >
+                                                                        {title}
+                                                                    </Link>
+                                                                )}
                                                             </StyledNavigationMenuTrigger>
                                                             <StyledNavigationMenuContent>
                                                                 <StyledNavigationMenuSub value="sub2">

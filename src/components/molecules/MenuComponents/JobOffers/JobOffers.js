@@ -1,6 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import { StyledJobOffers } from './JobOffers.styles';
+import { useStaticQuery, graphql } from 'gatsby';
+import { JobContent, StyledJobOffers } from './JobOffers.styles';
+import Heading from '../../../atoms/Headings/Heading';
+import DateBadge from '../../../atoms/DateBadge/DateBadge';
+import InfoBadge from '../../../atoms/InfoBadge/InfoBadge';
+import ContactBadge from '../../../atoms/ContactBadge/ContactBadge';
 
 const JobOffers = () => {
     const {
@@ -25,29 +29,34 @@ const JobOffers = () => {
 
     const { jobOfferList } = nodes[0];
     return (
-        <StyledJobOffers>
-            <div>
-                <span>{nodes[0].validDate}</span> <span>{nodes[0].date}</span>
-                {' | '}
-                <Link to="/">Start</Link>
-            </div>
-            {jobOfferList.map(
-                ({
-                    jobTitle,
-                    jobOfferDescription,
-                    offerDate,
-                    originalId,
-                    contact,
-                }) => (
-                    <div key={originalId}>
-                        <h3>{jobTitle}</h3>
-                        <p>{offerDate}</p>
-                        <p>{jobOfferDescription}</p>
-                        <p>Kontakt: {contact}</p>
-                    </div>
-                )
-            )}
-        </StyledJobOffers>
+        <>
+            <StyledJobOffers>
+                <Heading type="h1" title="Aktualne oferty pracy" />
+                <InfoBadge
+                    text={nodes[0].validDate}
+                    date={nodes[0].date}
+                    url="/"
+                    label="Start"
+                />
+                {jobOfferList.map(
+                    ({
+                        jobTitle,
+                        jobOfferDescription,
+                        offerDate,
+                        originalId,
+                        contact,
+                    }) => (
+                        <JobContent key={originalId}>
+                            <Heading type="h3" title={jobTitle} />
+                            <DateBadge date={offerDate} />
+                            <p>{jobOfferDescription}</p>
+                            <br />
+                            <ContactBadge data={contact} />
+                        </JobContent>
+                    )
+                )}
+            </StyledJobOffers>
+        </>
     );
 };
 

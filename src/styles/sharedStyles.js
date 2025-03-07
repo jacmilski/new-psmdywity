@@ -24,3 +24,19 @@ export const newsHeadlineStyles = css`
         font-size: var(--font-42);
     }
 `;
+
+export const docsLinksStyles = css`
+    & ul {
+        margin-top: 30px;
+
+        & li {
+            padding: 6px 0;
+
+            & a {
+                text-decoration: none;
+                color: var(--black-3);
+                font-size: var(--font-18);
+            }
+        }
+    }
+`;

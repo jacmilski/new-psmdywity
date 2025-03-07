@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import { StyledPlanOfLessons } from './PlanOfLessons.styles';
+import Heading from '../../../atoms/Headings/Heading';
+import InfoBadge from '../../../atoms/InfoBadge/InfoBadge';
 
 const PlanOfLessons = () => {
     const {
@@ -30,31 +31,32 @@ const PlanOfLessons = () => {
         }
     `);
 
-    console.log(nodes);
-
     return (
         <StyledPlanOfLessons>
-            <h1>{nodes[0].title}</h1>
-            <div>
-                <span>{nodes[0].validDate}</span> <span>{nodes[0].date}</span>
-                {' | '}
-                <Link to="/">Start</Link>
-            </div>
+            <Heading type="h1" title={nodes[0].title} />
+            <InfoBadge
+                text={nodes[0].validDate}
+                date={nodes[0].date}
+                url="/"
+                label="Start"
+            />
             {nodes[0].lessonsPlanFilliate.map((filliate) => (
                 <div key={filliate.originalId}>
-                    <h3>{filliate.filliateName}</h3>
-                    <div>
+                    <Heading type="h3" title={filliate.filliateName} />
+                    <ul>
                         {filliate.categoryAndFile.map((element) => (
-                            <a
-                                href={element.planFile.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                key={element.originalId}
-                            >
-                                {element.planCategory}
-                            </a>
+                            <li>
+                                <a
+                                    href={element.planFile.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={element.originalId}
+                                >
+                                    {element.planCategory}
+                                </a>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
             ))}
         </StyledPlanOfLessons>

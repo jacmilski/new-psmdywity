@@ -1,6 +1,8 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { StyledMusicianFirstClassDocs } from './MusicianFirstClassDocs.styles';
+import InfoBadge from '../../../atoms/InfoBadge/InfoBadge';
+import Heading from '../../../atoms/Headings/Heading';
 
 const MusicianFirstClassDocs = () => {
     const {
@@ -24,13 +26,9 @@ const MusicianFirstClassDocs = () => {
 
     return (
         <StyledMusicianFirstClassDocs>
-            <h2>{title}</h2>
-            <h3>{subtitle}</h3>
-            <div>
-                <span>{validDate}:</span> <span>{date}</span>
-                {' | '}
-                <Link to="/">Start</Link>
-            </div>
+            <Heading type="h2" title={title} />
+            <Heading type="h3" title={subtitle} />
+            <InfoBadge text={validDate} date={date} url="/" label="Start" />
             <ul>
                 {docsFile.map((doc) => (
                     <li key={doc.originalId}>

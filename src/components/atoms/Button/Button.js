@@ -9,19 +9,20 @@ import {
     StyledIcon,
     StyledLink,
 } from './Button.styles';
+import { labels } from './labels';
 
 const Button = ({ text, onClick, type, href }) =>
     href ? (
         <StyledButtonWrapper>
-            <StyledIcon src={FClefIcon} alt={'klucz basowy'} />
+            <StyledIcon src={FClefIcon} alt={labels.BASS_CLEF} />
             <StyledLink to={href}>{text}</StyledLink>
         </StyledButtonWrapper>
     ) : (
         <StyledButtonWrapper>
             <StyledIcon
                 src={GClefIcon}
-                alt={'klucz wiolinowy'} // @ts-ignore
-                $variant="violin-clef"
+                alt={labels.VIOLIN_CLEF} // @ts-ignore
+                $variant={labels.VIOLIN_CLEF}
             />
             <StyledButton type={type} onClick={onClick}>
                 {text}

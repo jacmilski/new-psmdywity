@@ -6,6 +6,7 @@ import Aside from '../components/organisms/Aside/Aside';
 import { NewsContainer, HorizontalDivider } from '../styles/pagesSharedStyles';
 import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
 import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
+import labels from './labels';
 
 const DywityPage = () => {
     const { datoCmsDywity: data } = useStaticQuery(graphql`
@@ -70,8 +71,8 @@ const DywityPage = () => {
                 <Aside />
                 <NewsContainer>
                     <NewsfeedHeadline
-                        title={`Aktualności`}
-                        filliateName={`filia Dywity`}
+                        title={labels.ACTUALITY}
+                        filliateName={labels.FILLIATE_DYWITY}
                     />
                     {data.newsfeedList.map((listData) => {
                         return (
