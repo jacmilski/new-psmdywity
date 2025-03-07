@@ -7,7 +7,7 @@ import Recruitment from '../../molecules/MenuComponents/Recruitment/Recruitment'
 import DeliveringAddress from '../../molecules/MenuComponents/DeliveringAddress/DeliveringAddress';
 import MusicianFirstClassDocs from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassDocs';
 import { labels } from '../../../utilities/labels';
-import CanceledLessons from '../../molecules/MenuComponents/CancelledLessons/CanceledLessons';
+import CancelledLessons from '../../molecules/MenuComponents/CancelledLessons/CancelledLessons';
 
 const FirstLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
@@ -27,7 +27,7 @@ const FirstLevelPagesTemplate = ({
             ) : slug === labels.MUSICIAN_FIRST_CLASS_DOCUMENTS ? (
                 <MusicianFirstClassDocs />
             ) : slug === labels.CANCELLED_LESSONS ? (
-                <CanceledLessons />
+                <CancelledLessons />
             ) : null}
         </MenuItemsInnerTemplate>
     );
