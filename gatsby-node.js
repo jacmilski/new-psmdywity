@@ -1,3 +1,5 @@
+const nodeLabels = require('./node-labels');
+
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -20,12 +22,11 @@ exports.createPages = async ({ graphql, actions }) => {
     firstLevelMenu.data.allDatoCmsAsideMenu.edges.map(({ node }) => {
         node.elementyMenu.map((element) => {
             if (
-                element.slug === 'muzyk-i-klasa' ||
-                element.slug === 'plan-zajec' ||
-                element.slug === 'oferty-pracy' ||
-                element.slug === 'rekrutacja' ||
-                element.slug === 'adres-do-doreczen' ||
-                element.slug === 'muzyk-i-klasa-dokumenty'
+                element.slug === nodeLabels.MUSICIAN_FIRST_CLASS_DOCUMENTS ||
+                element.slug === nodeLabels.LESSON_PLANS ||
+                element.slug === nodeLabels.JOB_OFFERS ||
+                element.slug === nodeLabels.RECRUITMENT ||
+                element.slug === nodeLabels.DELIVERING_ADDRESS
             ) {
                 createPage({
                     path: `/${element.slug}`,
@@ -64,25 +65,22 @@ exports.createPages = async ({ graphql, actions }) => {
         node.elementyMenu.map(({ submenuElement }) => {
             submenuElement.map((subelement) => {
                 if (
-                    subelement.slug === 'kierownicy-sekcji' ||
-                    subelement.slug === 'dyrekcja' ||
-                    subelement.slug === 'pedagodzy' ||
-                    subelement.slug === 'administracja' ||
-                    subelement.slug === 'instrumenty' ||
-                    subelement.slug === 'dlaczego-warto' ||
-                    subelement.slug === 'czeste-pytania' ||
-                    subelement.slug === 'metody-nauczania' ||
-                    subelement.slug === 'budowa-siedziby' ||
-                    subelement.slug === 'dyplomy' ||
-                    subelement.slug === 'artykuly' ||
-                    subelement.slug === 'afisze' ||
-                    subelement.slug === 'dokumenty-szkolne' ||
-                    subelement.slug === 'organ-prowadzacy' ||
-                    subelement.slug === 'organ-nadzorujacy' ||
-                    subelement.slug === 'ochrona-danych' ||
-                    subelement.slug === 'deklaracja-dostepnosci' ||
-                    subelement.slug === 'adres-do-doreczen' ||
-                    subelement.slug === 'muzyk-i-klasa-galeria'
+                    subelement.slug === nodeLabels.LEADERS ||
+                    subelement.slug === nodeLabels.DIRECTORS ||
+                    subelement.slug === nodeLabels.TEACHERS ||
+                    subelement.slug === nodeLabels.ADMINISTRATION ||
+                    subelement.slug === nodeLabels.INSTRUMENTS ||
+                    subelement.slug === nodeLabels.WHY_WORTH ||
+                    subelement.slug === nodeLabels.FREQUENT_QUESTIONS ||
+                    subelement.slug === nodeLabels.TEACHING_METHODS ||
+                    subelement.slug === nodeLabels.BUILDING ||
+                    subelement.slug === nodeLabels.DIPLOMAS ||
+                    subelement.slug === nodeLabels.ARTICLES ||
+                    subelement.slug === nodeLabels.POSTERS ||
+                    subelement.slug === nodeLabels.SCHOOL_DOCUMENTS ||
+                    subelement.slug === nodeLabels.DATA_PROTECTION ||
+                    subelement.slug === nodeLabels.ACCESSIBILITY_DECLARATION ||
+                    subelement.slug === nodeLabels.MUSICIAN_FIRST_CLASS_GALLERY
                 ) {
                     createPage({
                         path: `/${subelement.slug}`,
