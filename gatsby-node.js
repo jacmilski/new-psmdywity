@@ -1,3 +1,5 @@
+const nodeLabels = require('./node-labels');
+
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -20,12 +22,11 @@ exports.createPages = async ({ graphql, actions }) => {
     firstLevelMenu.data.allDatoCmsAsideMenu.edges.map(({ node }) => {
         node.elementyMenu.map((element) => {
             if (
-                element.slug === 'muzyk-i-klasa' ||
-                element.slug === 'plan-zajec' ||
-                element.slug === 'oferty-pracy' ||
-                element.slug === 'rekrutacja' ||
-                element.slug === 'adres-do-doreczen' ||
-                element.slug === 'muzyk-i-klasa-dokumenty'
+                element.slug === nodeLabels.MUSICIAN_FIRST_CLASS_DOCUMENTS ||
+                element.slug === nodeLabels.LESSON_PLANS ||
+                element.slug === nodeLabels.JOB_OFFERS ||
+                element.slug === nodeLabels.RECRUITMENT ||
+                element.slug === nodeLabels.DELIVERING_ADDRESS
             ) {
                 createPage({
                     path: `/${element.slug}`,
@@ -77,8 +78,6 @@ exports.createPages = async ({ graphql, actions }) => {
                     subelement.slug === 'artykuly' ||
                     subelement.slug === 'afisze' ||
                     subelement.slug === 'dokumenty-szkolne' ||
-                    subelement.slug === 'organ-prowadzacy' ||
-                    subelement.slug === 'organ-nadzorujacy' ||
                     subelement.slug === 'ochrona-danych' ||
                     subelement.slug === 'deklaracja-dostepnosci' ||
                     subelement.slug === 'adres-do-doreczen' ||
