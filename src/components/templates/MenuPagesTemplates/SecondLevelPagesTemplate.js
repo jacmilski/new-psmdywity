@@ -4,7 +4,6 @@ import Administration from '../../molecules/MenuComponents/Administration/Admini
 import Directors from '../../molecules/MenuComponents/Directors/Directors';
 import Leaders from '../../molecules/MenuComponents/Leaders/Leaders';
 import Teachers from '../../molecules/MenuComponents/Teachers/Teachers';
-import BasicInformation from '../../molecules/MenuComponents/BasicInformation/BasicInformation';
 import NewResidence from '../../molecules/MenuComponents/NewResidence/NewResidence';
 import Diplomas from '../../molecules/MenuComponents/Diplomas/Diplomas';
 import Articles from '../../molecules/MenuComponents/Articles/Articles';
@@ -13,6 +12,10 @@ import SchoolDocuments from '../../molecules/MenuComponents/SchoolDocuments/Scho
 import DataSecurity from '../../molecules/MenuComponents/DataSecurity/DataSecurity';
 import AccessibilityDeclaration from '../../molecules/MenuComponents/AccessibilityDeclaration/AccessibilityDeclaration';
 import MusicianFirstClassGallery from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassGallery';
+import Instruments from '../../molecules/MenuComponents/Instruments/Instruments';
+import WhyWorth from '../../molecules/MenuComponents/WhyWorth/WhyWorth';
+import FrequentQuestions from '../../molecules/MenuComponents/FrequentQuestions/FrequentQuestions';
+import TeachingMethods from '../../molecules/MenuComponents/TeachingMethods/TeachingMethods';
 
 const SecondLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
@@ -28,8 +31,14 @@ const SecondLevelPagesTemplate = ({
                 <Teachers />
             ) : slug === 'administracja' ? (
                 <Administration />
-            ) : slug === 'podstawowe-informacje' ? (
-                <BasicInformation />
+            ) : slug === 'instrumenty' ? (
+                <Instruments />
+            ) : slug === 'dlaczego-warto' ? (
+                <WhyWorth />
+            ) : slug === 'czeste-pytania' ? (
+                <FrequentQuestions />
+            ) : slug === 'metody-nauczania' ? (
+                <TeachingMethods />
             ) : slug === 'budowa-siedziby' ? (
                 <NewResidence />
             ) : slug === 'dyplomy' ? (

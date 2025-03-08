@@ -68,7 +68,10 @@ exports.createPages = async ({ graphql, actions }) => {
                     subelement.slug === 'dyrekcja' ||
                     subelement.slug === 'pedagodzy' ||
                     subelement.slug === 'administracja' ||
-                    subelement.slug === 'podstawowe-informacje' ||
+                    subelement.slug === 'instrumenty' ||
+                    subelement.slug === 'dlaczego-warto' ||
+                    subelement.slug === 'czeste-pytania' ||
+                    subelement.slug === 'metody-nauczania' ||
                     subelement.slug === 'budowa-siedziby' ||
                     subelement.slug === 'dyplomy' ||
                     subelement.slug === 'artykuly' ||
