@@ -16,6 +16,7 @@ import Instruments from '../../molecules/MenuComponents/Instruments/Instruments'
 import WhyWorth from '../../molecules/MenuComponents/WhyWorth/WhyWorth';
 import FrequentQuestions from '../../molecules/MenuComponents/FrequentQuestions/FrequentQuestions';
 import TeachingMethods from '../../molecules/MenuComponents/TeachingMethods/TeachingMethods';
+import labels from '../../../utilities/labels';
 
 const SecondLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
@@ -23,37 +24,37 @@ const SecondLevelPagesTemplate = ({
     return (
         // @ts-ignore
         <MenuItemsInnerTemplate title={title}>
-            {slug === 'dyrekcja' ? (
+            {slug === labels.DIRECTORS ? (
                 <Directors />
-            ) : slug === 'kierownicy-sekcji' ? (
+            ) : slug === labels.LEADERS ? (
                 <Leaders />
-            ) : slug === 'pedagodzy' ? (
+            ) : slug === labels.TEACHERS ? (
                 <Teachers />
-            ) : slug === 'administracja' ? (
+            ) : slug === labels.ADMINISTRATION ? (
                 <Administration />
-            ) : slug === 'instrumenty' ? (
+            ) : slug === labels.INSTRUMENTS ? (
                 <Instruments />
-            ) : slug === 'dlaczego-warto' ? (
+            ) : slug === labels.WHY_WORTH ? (
                 <WhyWorth />
-            ) : slug === 'czeste-pytania' ? (
+            ) : slug === labels.FREQUENT_QUESTIONS ? (
                 <FrequentQuestions />
-            ) : slug === 'metody-nauczania' ? (
+            ) : slug === labels.TEACHING_METHODS ? (
                 <TeachingMethods />
-            ) : slug === 'budowa-siedziby' ? (
+            ) : slug === labels.BUILDING ? (
                 <NewResidence />
-            ) : slug === 'dyplomy' ? (
+            ) : slug === labels.DIPLOMAS ? (
                 <Diplomas />
-            ) : slug === 'artykuly' ? (
+            ) : slug === labels.ARTICLES ? (
                 <Articles />
-            ) : slug === 'afisze' ? (
+            ) : slug === labels.POSTERS ? (
                 <Posters />
-            ) : slug === 'dokumenty-szkolne' ? (
+            ) : slug === labels.SCHOOL_DOCUMENTS ? (
                 <SchoolDocuments />
-            ) : slug === 'ochrona-danych' ? (
+            ) : slug === labels.DATA_PROTECTION ? (
                 <DataSecurity />
-            ) : slug === 'deklaracja-dostepnosci' ? (
+            ) : slug === labels.ACCESSIBILITY_DECLARATION ? (
                 <AccessibilityDeclaration />
-            ) : slug === 'muzyk-i-klasa-galeria' ? (
+            ) : slug === labels.MUSICIAN_FIRST_CLASS_GALLERY ? (
                 <MusicianFirstClassGallery />
             ) : null}
         </MenuItemsInnerTemplate>

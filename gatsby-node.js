@@ -65,23 +65,23 @@ exports.createPages = async ({ graphql, actions }) => {
         node.elementyMenu.map(({ submenuElement }) => {
             submenuElement.map((subelement) => {
                 if (
-                    subelement.slug === 'kierownicy-sekcji' ||
-                    subelement.slug === 'dyrekcja' ||
-                    subelement.slug === 'pedagodzy' ||
-                    subelement.slug === 'administracja' ||
-                    subelement.slug === 'instrumenty' ||
-                    subelement.slug === 'dlaczego-warto' ||
-                    subelement.slug === 'czeste-pytania' ||
-                    subelement.slug === 'metody-nauczania' ||
-                    subelement.slug === 'budowa-siedziby' ||
-                    subelement.slug === 'dyplomy' ||
-                    subelement.slug === 'artykuly' ||
-                    subelement.slug === 'afisze' ||
-                    subelement.slug === 'dokumenty-szkolne' ||
-                    subelement.slug === 'ochrona-danych' ||
-                    subelement.slug === 'deklaracja-dostepnosci' ||
-                    subelement.slug === 'adres-do-doreczen' ||
-                    subelement.slug === 'muzyk-i-klasa-galeria'
+                    subelement.slug === nodeLabels.DIRECTORS ||
+                    subelement.slug === nodeLabels.LEADERS ||
+                    subelement.slug === nodeLabels.TEACHERS ||
+                    subelement.slug === nodeLabels.ADMINISTRATION ||
+                    subelement.slug === nodeLabels.INSTRUMENTS ||
+                    subelement.slug === nodeLabels.WHY_WORTH ||
+                    subelement.slug === nodeLabels.FREQUENT_QUESTIONS ||
+                    subelement.slug === nodeLabels.TEACHING_METHODS ||
+                    subelement.slug === nodeLabels.BUILDING ||
+                    subelement.slug === nodeLabels.DIPLOMAS ||
+                    subelement.slug === nodeLabels.ARTICLES ||
+                    subelement.slug === nodeLabels.POSTERS ||
+                    subelement.slug === nodeLabels.SCHOOL_DOCUMENTS ||
+                    subelement.slug === nodeLabels.DATA_PROTECTION ||
+                    subelement.slug === nodeLabels.ACCESSIBILITY_DECLARATION ||
+                    subelement.slug === nodeLabels.DELIVERING_ADDRESS ||
+                    subelement.slug === nodeLabels.MUSICIAN_FIRST_CLASS_GALLERY
                 ) {
                     createPage({
                         path: `/${subelement.slug}`,
