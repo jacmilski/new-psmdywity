@@ -10,8 +10,6 @@ import Diplomas from '../../molecules/MenuComponents/Diplomas/Diplomas';
 import Articles from '../../molecules/MenuComponents/Articles/Articles';
 import Posters from '../../molecules/MenuComponents/Posters/Posters';
 import SchoolDocuments from '../../molecules/MenuComponents/SchoolDocuments/SchoolDocuments';
-import ProvideringOrgan from '../../molecules/MenuComponents/ProvideringOrgan/ProvideringOrgan';
-import SupervisingOrgan from '../../molecules/MenuComponents/SupervisingOrgan/SupervisingOrgan';
 import DataSecurity from '../../molecules/MenuComponents/DataSecurity/DataSecurity';
 import AccessibilityDeclaration from '../../molecules/MenuComponents/AccessibilityDeclaration/AccessibilityDeclaration';
 import MusicianFirstClassGallery from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassGallery';
@@ -42,10 +40,6 @@ const SecondLevelPagesTemplate = ({
                 <Posters />
             ) : slug === 'dokumenty-szkolne' ? (
                 <SchoolDocuments />
-            ) : slug === 'organ-prowadzacy' ? (
-                <ProvideringOrgan />
-            ) : slug === 'organ-nadzorujacy' ? (
-                <SupervisingOrgan />
             ) : slug === 'ochrona-danych' ? (
                 <DataSecurity />
             ) : slug === 'deklaracja-dostepnosci' ? (
