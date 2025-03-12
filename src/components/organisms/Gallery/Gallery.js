@@ -8,7 +8,6 @@ import {
 } from './Gallery.styles';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import Heading from '../../atoms/Headings/Heading';
-import Aside from '../Aside/Aside';
 
 const Gallery = ({ data, title, subtitle, teachers }) => {
     const [images, setImages] = useState([]);
@@ -45,15 +44,6 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                 // @ts-ignore
                 $teachers={teachers}
             >
-                {teachers ? null : (
-                    <Aside
-                        // @ts-ignore
-                        gallery={true}
-                        filliate={undefined}
-                        // @ts-ignore
-                        $teachers={teachers}
-                    />
-                )}
                 <StyledGalleriaDiv
                     // @ts-ignore
                     $teachers={teachers}
@@ -104,6 +94,7 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                                         style={{
                                             width: '100%',
                                             maxWidth: '200px',
+                                            aspectRatio: 'auto',
                                             cursor: 'pointer',
                                             display: 'inline-block',
                                         }}
@@ -129,11 +120,17 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                                         style={{
                                             width: '100%',
                                             display: ' flex',
-                                            justifyContent: 'center',
+                                            justifyContent: 'flex-start',
                                             alignItems: 'center',
                                         }}
                                     >
                                         {imgEl}
+                                        <p>
+                                            {
+                                                // @ts-ignore
+                                                image.title
+                                            }
+                                        </p>
                                     </StyledGalleriaCard>
                                 );
                             })}

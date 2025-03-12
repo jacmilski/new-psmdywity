@@ -19,7 +19,7 @@ export const StyledHeading2 = styled.h2`
     font-size: ${({
         // @ts-ignore
         $type,
-    }) => ($type === 'h2' ? '28px' : '16px')};
+    }) => ($type === 'h2' ? 'clamp(24px, 2.41935vw, 28px)' : '16px')};
     padding: 20px 20px 20px 0;
 `;
 

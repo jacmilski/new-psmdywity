@@ -11,10 +11,11 @@ export const StyledAside = styled.aside`
         width: auto;
         display: block;
         padding: 0;
-        margin: ${({
+        /* margin: ${({
             // @ts-ignore
             $filliate,
-        }) => ($filliate ? '0 0' : '10px 0')};
+        }) => ($filliate ? '0 0' : '10px 0')}; */
+        margin: 0;
     }
 
     @media only screen and (min-width: 992px) {

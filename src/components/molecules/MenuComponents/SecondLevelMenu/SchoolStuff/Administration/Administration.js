@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import ContentLayout from '../../../../../templates/ContentLayout/ContentLayout';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import Gallery from '../../../../../organisms/Gallery/Gallery';
+import Aside from '../../../../../organisms/Aside/Aside';
 
 const Administration = () => {
     const { datoCmsAdministrationGallery } = useStaticQuery(graphql`
@@ -24,6 +25,7 @@ const Administration = () => {
 
     return (
         <ContentLayout>
+            <Aside gallery={true} filliate={undefined} />
             <Gallery
                 data={photos}
                 title={datoCmsAdministrationGallery.title}

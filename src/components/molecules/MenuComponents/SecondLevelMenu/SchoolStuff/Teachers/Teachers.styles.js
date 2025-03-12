@@ -12,11 +12,12 @@ export const StyledTeachersWrapper = styled.div`
     }
 
     & h2 {
-        padding: 10px 0 30px;
+        padding: 10px 0 0;
     }
 
     & p {
         margin-bottom: 40px;
+        color: var(--black-3);
     }
 `;
 

@@ -35,11 +35,12 @@ export const StyledGalleriaDiv = styled.div`
     height: 100%;
     padding: 20px;
 
-    & h2 {
+    & h2,
+    h1 {
         padding: ${({
             // @ts-ignore
             $teachers,
-        }) => ($teachers ? '0' : '20px')};
+        }) => ($teachers ? '0' : '0 0 20px')};
     }
 
     & h1,
@@ -53,7 +54,7 @@ export const StyledGalleriaDiv = styled.div`
     }
 
     @media only screen and (min-width: 768px) {
-        padding: 30px 0;
+        padding: 30px 10px;
 
         & h1,
         h2,
@@ -65,7 +66,7 @@ export const StyledGalleriaDiv = styled.div`
     ${docsLinksStyles};
 
     @media only screen and (min-width: 992px) {
-        padding: 30px 10px;
+        padding: 30px 20px;
     }
 `;
 
@@ -86,4 +87,15 @@ export const StyledGalleriaGrid = styled.div`
 
 export const StyledGalleriaCard = styled.div`
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & p {
+        width: 100%;
+        text-align: center;
+        color: var(--black-3);
+        font-size: 14px;
+        padding-top: 5px;
+        line-height: 1.1;
+    }
 `;
