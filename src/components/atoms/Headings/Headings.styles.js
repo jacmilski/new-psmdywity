@@ -11,7 +11,7 @@ export const StyledHeading1 = styled.h1`
         // @ts-ignore
         $type,
     }) => ($type === 'h1' ? '32px' : '16px')};
-    padding: 30px 30px 30px 0;
+    padding: '30px 30px 30px 0';
 `;
 
 export const StyledHeading2 = styled.h2`

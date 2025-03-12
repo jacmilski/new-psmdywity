@@ -1,6 +1,6 @@
 // @ts-nocheck
 import * as React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+//import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import './styles.css';
 import {
@@ -14,7 +14,7 @@ import {
 } from './AsideMenu.styles';
 import labels from '../../../utilities/labels';
 
-const AsideMenu = () => {
+const AsideMenu = ({ gallery, filliate }) => {
     const {
         allDatoCmsAsideMenu: { nodes },
     } = useStaticQuery(graphql`
@@ -80,8 +80,9 @@ const AsideMenu = () => {
     const [{ elementyMenu: elems }] = nodes;
 
     return (
-        <StyledAsideMenuWrapper>
-            <GatsbyImage
+        <StyledAsideMenuWrapper $gallery={gallery} $filliate={filliate}>
+            {/* dać zdjęcia w kontener i wypozycjonować */}
+            {/* <GatsbyImage
                 image={getImage(nodes[0].asideMenuBackground)}
                 alt={nodes[0].asideMenuBackground.alt}
             />
@@ -94,7 +95,7 @@ const AsideMenu = () => {
                 image={getImage(nodes[0].asideMenuBackground)}
                 alt={nodes[0].asideMenuBackground.alt}
                 className="note-3"
-            />
+            /> */}
             <StyledNavigationMenuRoot orientation="vertical">
                 <StyledNavigationMenuList>
                     {elems.map(

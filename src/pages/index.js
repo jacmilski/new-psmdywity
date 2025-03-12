@@ -2,6 +2,9 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import Seo from '../components/atoms/Seo/Seo';
 import HeroSection from '../components/organisms/HeroSection/HeroSection';
+import { PrimeReactProvider } from 'primereact/api';
+import 'primereact/resources/themes/lara-light-cyan/theme.css';
+import 'primereact/resources/primereact.min.css';
 
 const IndexPage = ({ data }) => {
     const {
@@ -12,13 +15,15 @@ const IndexPage = ({ data }) => {
     } = data;
 
     return (
-        <main style={{ position: 'relative' }}>
-            <HeroSection
-                title={titleOfHeroImage}
-                image={gatsbyImageData}
-                alt={alt}
-            />
-        </main>
+        <PrimeReactProvider>
+            <main style={{ position: 'relative' }}>
+                <HeroSection
+                    title={titleOfHeroImage}
+                    image={gatsbyImageData}
+                    alt={alt}
+                />
+            </main>
+        </PrimeReactProvider>
     );
 };
 

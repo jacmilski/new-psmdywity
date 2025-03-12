@@ -8,12 +8,18 @@ export const StyledAsideMenuWrapper = styled.div`
     top: 450px;
     left: 90px;
     width: 100%;
-    min-width: 170px;
+    min-width: ${({
+        // @ts-ignore
+        $gallery,
+    }) => ($gallery ? '210px' : '170px')};
     z-index: 1000;
 
     @media only screen and (min-width: 768px) {
         display: block;
-        padding: 30px;
+        padding: ${({
+            // @ts-ignore
+            $filliate,
+        }) => ($filliate ? '30px 10px' : '30px')};
 
         & .gatsby-image-wrapper {
             position: absolute;
@@ -41,7 +47,14 @@ export const StyledAsideMenuWrapper = styled.div`
 
     @media only screen and (min-width: 992px) {
         display: block;
-        padding: 10px;
+        padding: ${({
+            // @ts-ignore
+            $filliate,
+        }) => ($filliate ? '30px 15px' : '30px 10px')};
+        max-width: ${({
+            // @ts-ignore
+            $gallery,
+        }) => ($gallery ? '250px' : null)};
 
         & .gatsby-image-wrapper {
             display: none;

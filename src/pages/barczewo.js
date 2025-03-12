@@ -63,9 +63,9 @@ const BarczewoPage = () => {
     // @ts-ignore
     return (
         <>
-            <FilliateInfoBanner data={data} />;
+            <FilliateInfoBanner data={data} />
             <ContentLayout>
-                <Aside />
+                <Aside gallery={undefined} filliate={true} />
                 <NewsContainer>
                     <NewsfeedHeadline
                         title="Aktualności"

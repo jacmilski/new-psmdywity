@@ -21,7 +21,7 @@ export const newsHeadlineStyles = css`
     }
 
     @media only screen and (min-width: 768px) {
-        font-size: var(--font-42);
+        font-size: clamp(26px, 3.376623vw, 40px); //var(--font-42);
     }
 `;
 

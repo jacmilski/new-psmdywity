@@ -1,11 +1,10 @@
-// @ts-nocheck
 import React from 'react';
 import MenuItemsInnerTemplate from './MenuItemsInnerTemplate';
-import PlanOfLessons from '../../molecules/MenuComponents/PlanOfLessons/PlanOfLessons';
-import JobOffers from '../../molecules/MenuComponents/JobOffers/JobOffers';
-import Recruitment from '../../molecules/MenuComponents/Recruitment/Recruitment';
-import DeliveringAddress from '../../molecules/MenuComponents/DeliveringAddress/DeliveringAddress';
-import MusicianFirstClassDocs from '../../molecules/MenuComponents/MusicianFirstClass/MusicianFirstClassDocs';
+import PlanOfLessons from '../../molecules/MenuComponents/FirstLevelMenu/PlanOfLessons/PlanOfLessons';
+import JobOffers from '../../molecules/MenuComponents/FirstLevelMenu/JobOffers/JobOffers';
+import Recruitment from '../../molecules/MenuComponents/FirstLevelMenu/Recruitment/Recruitment';
+import DeliveringAddress from '../../molecules/MenuComponents/FirstLevelMenu/DeliveringAddress/DeliveringAddress';
+import MusicianFirstClassDocs from '../../molecules/MenuComponents/FirstLevelMenu/MusicianFirstClassDocuments/MusicianFirstClassDocs';
 import labels from '../../../utilities/labels';
 
 const FirstLevelPagesTemplate = ({
@@ -15,7 +14,7 @@ const FirstLevelPagesTemplate = ({
     return (
         // @ts-ignore
         <MenuItemsInnerTemplate title={title}>
-            {slug && slug === labels.PLAN_OF_LESSONS ? (
+            {slug && slug === labels.LESSON_PLANS ? (
                 <PlanOfLessons />
             ) : slug === labels.JOB_OFFERS ? (
                 <JobOffers />

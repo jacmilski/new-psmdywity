@@ -65,7 +65,7 @@ const DobreMiastoPage = () => {
         <>
             <FilliateInfoBanner data={data} />
             <ContentLayout>
-                <Aside />
+                <Aside gallery={undefined} filliate={true} />
                 <NewsContainer>
                     <NewsfeedHeadline
                         title="Aktualności"

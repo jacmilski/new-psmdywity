@@ -64,6 +64,18 @@ const GlobalStyles = createGlobalStyle`
     * {
         font-family: 'Lora', sans-serif;
     }
+
+    body {
+            .p-galleria-mask
+            .p-galleria-fullscreen
+            .p-galleria-close
+            .p-galleria-close-icon path,
+            .p-galleria-item-prev .p-galleria-item-prev-icon path,
+            .p-galleria-item-next .p-galleria-item-next-icon path {
+            fill: #393939;
+            cursor: pointer;
+        }
+    }
 `;
 
 export default GlobalStyles;

@@ -8,9 +8,13 @@ export const StyledAside = styled.aside`
     display: none;
 
     @media only screen and (min-width: 768px) {
+        width: auto;
         display: block;
         padding: 0;
-        margin: 10px 0;
+        margin: ${({
+            // @ts-ignore
+            $filliate,
+        }) => ($filliate ? '0 0' : '10px 0')};
     }
 
     @media only screen and (min-width: 992px) {

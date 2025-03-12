@@ -8,8 +8,6 @@ exports.wrapPageElement = ({ element, props }) => {
     return <GlobalLayout {...props}>{element}</GlobalLayout>;
 };
 
-//const key = `https://kit.fontawesome.com/${process.env.AWESOME_SECRET_CODE}.js`;
-
 exports.onRenderBody = ({ setHeadComponents }) => {
     setHeadComponents([
         <link
@@ -100,6 +98,12 @@ exports.onRenderBody = ({ setHeadComponents }) => {
             type="font/woff2"
             key="interFont"
         />,
-        // <script src={key} crossOrigin="anonymous"></script>,
+        <link
+            id="theme-link"
+            rel="stylesheet"
+            href="/themes/lara-light-blue/theme.css"
+            as="theme"
+            key="interTheme"
+        />,
     ]);
 };

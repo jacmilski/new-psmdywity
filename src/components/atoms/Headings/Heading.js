@@ -5,11 +5,19 @@ import {
     StyledHeading3,
 } from './Headings.styles';
 
-const Heading = ({ type, title }) => {
+const Heading = ({ type, title, teachers }) => {
     switch (type) {
         case 'h1':
             // @ts-ignore
-            return <StyledHeading1 $type={type}>{title}</StyledHeading1>;
+            return (
+                <StyledHeading1
+                    // @ts-ignore
+                    $type={type}
+                    $teachers={teachers}
+                >
+                    {title}
+                </StyledHeading1>
+            );
         case 'h2':
             // @ts-ignore
             return <StyledHeading2 $type={type}>{title}</StyledHeading2>;
