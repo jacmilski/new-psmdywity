@@ -5,6 +5,9 @@
 require('dotenv').config();
 
 module.exports = {
+    flags: {
+        DEV_SSR: true,
+    },
     siteMetadata: {
         title: `psm-dywity`,
         description: `Samorządowa Szkoła Muzyczna I st. w Dywitach w Powiecie Olsztyńskim. Szkoła prowadzi naukę gry na instrumentach muzycznych oraz zajęcia z wiedzy o muzyce.`,
