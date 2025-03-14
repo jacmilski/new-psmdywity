@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyledLink, StyledLinkWrapper } from './FilliateLink.styles';
 
 // @ts-ignore
@@ -8,4 +8,4 @@ const FilliateLink = ({ url, children, ariaLabel, className }) => (
     </StyledLinkWrapper>
 );
 
-export default FilliateLink;
+export default memo(FilliateLink);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import MenuItemsInnerTemplate from './MenuItemsInnerTemplate';
 import PlanOfLessons from '../../molecules/MenuComponents/FirstLevelMenu/PlanOfLessons/PlanOfLessons';
 import JobOffers from '../../molecules/MenuComponents/FirstLevelMenu/JobOffers/JobOffers';
@@ -10,7 +10,6 @@ import labels from '../../../utilities/labels';
 const FirstLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
 }) => {
-    console.log(slug);
     return (
         // @ts-ignore
         <MenuItemsInnerTemplate title={title}>
@@ -29,4 +28,4 @@ const FirstLevelPagesTemplate = ({
     );
 };
 
-export default FirstLevelPagesTemplate;
+export default memo(FirstLevelPagesTemplate);

@@ -60,7 +60,7 @@ const DobreMiastoPage = () => {
             }
         }
     `);
-    // @ts-ignore
+
     return (
         <>
             <FilliateInfoBanner data={data} />
@@ -71,14 +71,15 @@ const DobreMiastoPage = () => {
                         title="Aktualności"
                         filliateName="filia Dobre Miasto"
                     />
-                    {data.newsfeedList.map((listData) => {
-                        return (
-                            <div key={listData.originalId}>
-                                <Newsfeed data={listData} />
-                                <HorizontalDivider />
-                            </div>
-                        );
-                    })}
+                    {data.newsfeedList // @ts-ignore
+                        .map((listData) => {
+                            return (
+                                <div key={listData.originalId}>
+                                    <Newsfeed data={listData} />
+                                    <HorizontalDivider />
+                                </div>
+                            );
+                        })}
                 </NewsContainer>
             </ContentLayout>
         </>

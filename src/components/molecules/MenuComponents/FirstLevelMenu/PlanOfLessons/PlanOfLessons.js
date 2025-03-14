@@ -33,7 +33,7 @@ const PlanOfLessons = () => {
 
     return (
         <StyledPlanOfLessons>
-            <Heading type="h1" title={nodes[0].title} />
+            <Heading type="h1" title={nodes[0].title} teachers={undefined} />
             <InfoBadge
                 text={nodes[0].validDate}
                 date={nodes[0].date}
@@ -42,7 +42,11 @@ const PlanOfLessons = () => {
             />
             {nodes[0].lessonsPlanFilliate.map((filliate) => (
                 <div key={filliate.originalId}>
-                    <Heading type="h3" title={filliate.filliateName} />
+                    <Heading
+                        type="h3"
+                        title={filliate.filliateName}
+                        teachers={undefined}
+                    />
                     <ul>
                         {filliate.categoryAndFile.map((element) => (
                             <li>

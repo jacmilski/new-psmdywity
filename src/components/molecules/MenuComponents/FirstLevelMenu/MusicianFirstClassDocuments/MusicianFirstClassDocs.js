@@ -26,8 +26,8 @@ const MusicianFirstClassDocs = () => {
 
     return (
         <StyledMusicianFirstClassDocs>
-            <Heading type="h2" title={title} />
-            <Heading type="h3" title={subtitle} />
+            <Heading type="h2" title={title} teachers={undefined} />
+            <Heading type="h3" title={subtitle} teachers={undefined} />
             <InfoBadge text={validDate} date={date} url="/" label="Start" />
             <ul>
                 {docsFile.map((doc) => (

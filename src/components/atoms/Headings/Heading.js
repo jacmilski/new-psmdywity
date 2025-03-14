@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
     StyledHeading1,
     StyledHeading2,
@@ -27,4 +27,4 @@ const Heading = ({ type, title, teachers }) => {
     }
 };
 
-export default Heading;
+export default memo(Heading);

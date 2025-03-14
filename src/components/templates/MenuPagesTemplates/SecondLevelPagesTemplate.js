@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import MenuItemsInnerTemplate from './MenuItemsInnerTemplate';
 import Administration from '../../molecules/MenuComponents/SecondLevelMenu/SchoolStuff/Administration/Administration';
 import Directors from '../../molecules/MenuComponents/SecondLevelMenu/SchoolStuff/Directors/Directors';
@@ -59,7 +59,7 @@ const SecondLevelPagesTemplate = ({
     );
 };
 
-export default SecondLevelPagesTemplate;
+export default memo(SecondLevelPagesTemplate);
 
 /* slug === labels.DATA_PROTECTION ? (
                 <DataSecurity />

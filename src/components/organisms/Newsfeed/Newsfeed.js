@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { StyledNewsfeed, StyledMediaWrapper } from './Newsfeed.styles';
 import { Link } from 'gatsby';
 import Video from '../../atoms/Video/Video';
 
 const Newsfeed = ({ data }) => {
-    const dataArr = [data];
-    console.log(dataArr);
     const {
         message,
         imageForMessage,
@@ -71,4 +69,4 @@ const Newsfeed = ({ data }) => {
     );
 };
 
-export default Newsfeed;
+export default memo(Newsfeed);

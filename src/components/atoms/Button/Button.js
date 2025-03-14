@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 // @ts-ignore
 import FClefIcon from '../../../images/icons/f-clef-32.png';
 // @ts-ignore
@@ -30,4 +30,4 @@ const Button = ({ text, onClick, type, href }) =>
         </StyledButtonWrapper>
     );
 
-export default Button;
+export default memo(Button);

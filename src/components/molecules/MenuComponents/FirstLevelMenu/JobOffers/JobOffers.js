@@ -31,7 +31,11 @@ const JobOffers = () => {
     return (
         <>
             <StyledJobOffers>
-                <Heading type="h1" title="Aktualne oferty pracy" />
+                <Heading
+                    type="h1"
+                    title="Aktualne oferty pracy"
+                    teachers={undefined}
+                />
                 <InfoBadge
                     text={nodes[0].validDate}
                     date={nodes[0].date}
@@ -47,7 +51,11 @@ const JobOffers = () => {
                         contact,
                     }) => (
                         <JobContent key={originalId}>
-                            <Heading type="h3" title={jobTitle} />
+                            <Heading
+                                type="h3"
+                                title={jobTitle}
+                                teachers={undefined}
+                            />
                             <DateBadge date={offerDate} />
                             <p>{jobOfferDescription}</p>
                             <br />

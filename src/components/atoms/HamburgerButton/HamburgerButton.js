@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyledHamburgerButton, StyledIcon } from './HamburgerButton.styles';
 // @ts-ignore
 import TransparentHamburgerIcon from '../../../images/icons/hamburger_btn_transparent_50.png';
@@ -23,4 +23,4 @@ const HamburgerButton = ({ isOpen, openMenu }) => {
     );
 };
 
-export default HamburgerButton;
+export default memo(HamburgerButton);

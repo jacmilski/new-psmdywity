@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { memo } from 'react';
 import { StyledInfoBadge } from './InfoBadge.styles';
 import DateBadge from '../DateBadge/DateBadge';
 
@@ -12,4 +12,4 @@ const InfoBadge = ({ text, date, url, label }) => {
     );
 };
 
-export default InfoBadge;
+export default memo(InfoBadge);

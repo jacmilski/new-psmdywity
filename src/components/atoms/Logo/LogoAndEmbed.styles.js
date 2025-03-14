@@ -4,7 +4,7 @@ export const StyledLogo = styled.div`
     width: ${({
         // @ts-ignore
         $isOpen,
-    }) => ($isOpen ? '270px' : '221px')};
+    }) => ($isOpen ? '200px' : '221px')};
     height: auto;
 
     & img {

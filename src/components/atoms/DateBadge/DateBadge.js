@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyledDateBadge } from './DateBadge.styles';
 
 const DateBadge = ({ date }) => {
@@ -10,4 +10,4 @@ const DateBadge = ({ date }) => {
     );
 };
 
-export default DateBadge;
+export default memo(DateBadge);

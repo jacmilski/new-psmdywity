@@ -73,14 +73,17 @@ const DywityPage = () => {
                         title="Aktualności"
                         filliateName="filia Dywity"
                     />
-                    {data.newsfeedList.map((listData) => {
-                        return (
-                            <div key={listData.originalId}>
-                                <Newsfeed data={listData} />
-                                <HorizontalDivider />
-                            </div>
-                        );
-                    })}
+                    {
+                        // @ts-ignore
+                        data.newsfeedList.map((listData) => {
+                            return (
+                                <div key={listData.originalId}>
+                                    <Newsfeed data={listData} />
+                                    <HorizontalDivider />
+                                </div>
+                            );
+                        })
+                    }
                 </NewsContainer>
             </ContentLayout>
         </>

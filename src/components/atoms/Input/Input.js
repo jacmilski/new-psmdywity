@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
     StyledError,
     StyledInput,
@@ -22,4 +22,4 @@ const Input = ({ name, type, label, error }) => (
     </StyledInputWrapper>
 );
 
-export default Input;
+export default memo(Input);

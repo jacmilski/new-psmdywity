@@ -2,12 +2,21 @@ import { NavigationMenu } from 'radix-ui';
 import styled from 'styled-components';
 
 export const StyledAsideMenuWrapper = styled.div`
-    display: none;
+    display: ${({
+        // @ts-ignore
+        $isOpen,
+    }) => ($isOpen ? 'flex' : 'none')};
     background-color: var(--yellow-3);
-    position: stcky;
-    top: 450px;
-    left: 90px;
+    //position: absolute;
+    //top: 450px;
+    //left: 90px;
     width: 100%;
+    padding: ${({
+        // @ts-ignore
+        $isOpen,
+        // @ts-ignore
+        $widthOfWindow,
+    }) => ($isOpen && $widthOfWindow < 768 ? '20px' : 'unset')};
     min-width: ${({
         // @ts-ignore
         $gallery,
@@ -15,34 +24,14 @@ export const StyledAsideMenuWrapper = styled.div`
     z-index: 1000;
 
     @media only screen and (min-width: 768px) {
-        display: block;
+        display: ${({
+            // @ts-ignore
+            $isOpen,
+        }) => ($isOpen ? 'block' : 'none')}; //block;
         padding: ${({
             // @ts-ignore
             $filliate,
         }) => ($filliate ? '30px 10px' : '30px')};
-
-        & .gatsby-image-wrapper {
-            position: absolute;
-            top: 15%;
-            right: 50%;
-            width: 90px;
-            max-width: unset;
-            z-index: 10001;
-
-            & div {
-                max-width: 150px !important;
-            }
-
-            &.note-2 {
-                top: 25%;
-                right: 30%;
-            }
-
-            &.note-3 {
-                top: 36%;
-                right: 9%;
-            }
-        }
     }
 
     @media only screen and (min-width: 992px) {

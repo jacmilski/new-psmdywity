@@ -25,7 +25,7 @@ const Recruitment = () => {
 
     return (
         <StyledRecruitment>
-            <Heading type="h2" title={recruitmentDocs} />
+            <Heading type="h2" title={recruitmentDocs} teachers={undefined} />
             <InfoBadge text={validDate} date={date} url="/" label="Start" />
             <ul>
                 {document.map((doc) => (

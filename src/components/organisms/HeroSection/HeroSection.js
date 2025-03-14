@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
     GatsbyImageWrapper,
     StyledHeroHeading,
@@ -21,4 +21,4 @@ const HeroSection = ({ title, image, alt }) => {
     );
 };
 
-export default HeroSection;
+export default memo(HeroSection);

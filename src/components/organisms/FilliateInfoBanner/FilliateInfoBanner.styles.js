@@ -53,7 +53,7 @@ export const StyledFilliateTitle = styled.h1`
     line-height: 40px;
 
     @media only screen and (min-width: 576px) {
-        margin-top: 20px;
+        margin-top: 100px;
         padding: 30px;
     }
 
@@ -92,9 +92,14 @@ export const StyledFilliateInfo = styled.div`
         line-height: clamp(28px, 3.64583vw, 32px);
     }
 
+    @media only screen and (min-width: 576px) {
+        margin-bottom: 50px;
+    }
+
     @media only screen and (min-width: 768px) {
         gap: 0;
         align-items: flex-start;
+        margin-bottom: unset;
     }
 `;
 

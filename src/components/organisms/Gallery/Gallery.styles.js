@@ -53,6 +53,11 @@ export const StyledGalleriaDiv = styled.div`
         padding-bottom: 20px;
     }
 
+    & figure {
+        width: 100%;
+        margin: 0;
+    }
+
     @media only screen and (min-width: 768px) {
         padding: 30px 10px;
 
@@ -90,12 +95,16 @@ export const StyledGalleriaCard = styled.div`
     display: flex;
     flex-direction: column;
 
-    & p {
+    & figcaption {
         width: 100%;
         text-align: center;
         color: var(--black-3);
         font-size: 14px;
         padding-top: 5px;
         line-height: 1.1;
+
+        @media only screen and (min-width: 768px) {
+            text-align: start;
+        }
     }
 `;

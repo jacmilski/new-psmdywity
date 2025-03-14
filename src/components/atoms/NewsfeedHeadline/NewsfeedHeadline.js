@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
     StyledDivider,
     StyledFilliateName,
@@ -18,4 +18,4 @@ const NewsfeedHeadline = ({ title, filliateName }) => {
     );
 };
 
-export default NewsfeedHeadline;
+export default memo(NewsfeedHeadline);

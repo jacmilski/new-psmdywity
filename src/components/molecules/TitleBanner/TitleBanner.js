@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
     StyledBgImage,
     StyledTitle,
@@ -18,4 +18,4 @@ const TitleBanner = ({ title }) => {
     );
 };
 
-export default TitleBanner;
+export default memo(TitleBanner);

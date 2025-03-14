@@ -4,7 +4,7 @@ export const StyledNav = styled.nav`
     width: 100%;
     height: 100vh;
     position: absolute;
-    top: 0;
+    top: 70px;
     left: 0;
     display: ${({
         // @ts-ignore
@@ -13,10 +13,34 @@ export const StyledNav = styled.nav`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
     z-index: 200;
 
+    & .links-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: ${({
+            // @ts-ignore
+            $widthOfWindow,
+        }) => ($widthOfWindow >= 768 ? 'flex-end' : 'center')};
+        align-items: center;
+        gap: 0 20px;
+        padding: 10px;
+        min-height: ${({
+            // @ts-ignore
+            $isOpen,
+            // @ts-ignore
+            $widthOfWindow,
+        }) => (($isOpen && $widthOfWindow) < 768 ? '160px' : 'unset')};
+
+        @media only screen and (min-width: 768px) {
+            min-height: unset;
+            gap: 10px 20px;
+        }
+    }
+
     @media only screen and (min-width: 768px) {
+        //przerobić to bo to nie odnosi się już do div-a z linkami
         height: auto;
         width: 100%;
         position: relative;

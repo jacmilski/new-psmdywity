@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import { Galleria } from 'primereact/galleria';
 import {
     StyledGalleriaWrapper,
@@ -114,24 +114,26 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                                     />
                                 );
                                 return (
-                                    <StyledGalleriaCard
-                                        className="col-3"
-                                        key={index}
-                                        style={{
-                                            width: '100%',
-                                            display: ' flex',
-                                            justifyContent: 'flex-start',
-                                            alignItems: 'center',
-                                        }}
-                                    >
-                                        {imgEl}
-                                        <p>
-                                            {
-                                                // @ts-ignore
-                                                image.title
-                                            }
-                                        </p>
-                                    </StyledGalleriaCard>
+                                    <figure>
+                                        <StyledGalleriaCard
+                                            className="col-3"
+                                            key={index}
+                                            style={{
+                                                width: '100%',
+                                                display: ' flex',
+                                                justifyContent: 'flex-start',
+                                                alignItems: 'center',
+                                            }}
+                                        >
+                                            {imgEl}
+                                            <figcaption>
+                                                {
+                                                    // @ts-ignore
+                                                    image.title
+                                                }
+                                            </figcaption>
+                                        </StyledGalleriaCard>
+                                    </figure>
                                 );
                             })}
                     </StyledGalleriaGrid>
@@ -141,4 +143,4 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
     );
 };
 
-export default Gallery;
+export default memo(Gallery);

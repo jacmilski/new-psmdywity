@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyledAside } from './Aside.styles';
 import AsideMenu from '../AsideMenu/AsideMenu';
 
@@ -18,4 +18,4 @@ const Aside = ({ gallery, filliate }) => {
     );
 };
 
-export default Aside;
+export default memo(Aside);

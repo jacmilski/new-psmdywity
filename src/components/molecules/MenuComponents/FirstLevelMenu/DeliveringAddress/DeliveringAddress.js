@@ -20,7 +20,7 @@ const DeliveringAddress = () => {
 
     return (
         <StyledDeliveringAddress>
-            <Heading type="h2" title={title} />
+            <Heading type="h2" title={title} teachers={undefined} />
             <InfoBadge text={validDate} date={date} url="/" label="Start" />
             <p>{address}</p>
         </StyledDeliveringAddress>

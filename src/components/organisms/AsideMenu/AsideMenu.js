@@ -1,6 +1,4 @@
-// @ts-nocheck
 import * as React from 'react';
-//import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import './styles.css';
 import {
@@ -14,7 +12,7 @@ import {
 } from './AsideMenu.styles';
 import labels from '../../../utilities/labels';
 
-const AsideMenu = ({ gallery, filliate }) => {
+const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
     const {
         allDatoCmsAsideMenu: { nodes },
     } = useStaticQuery(graphql`
@@ -80,22 +78,13 @@ const AsideMenu = ({ gallery, filliate }) => {
     const [{ elementyMenu: elems }] = nodes;
 
     return (
-        <StyledAsideMenuWrapper $gallery={gallery} $filliate={filliate}>
-            {/* dać zdjęcia w kontener i wypozycjonować */}
-            {/* <GatsbyImage
-                image={getImage(nodes[0].asideMenuBackground)}
-                alt={nodes[0].asideMenuBackground.alt}
-            />
-            <GatsbyImage
-                image={getImage(nodes[0].asideMenuBackground)}
-                alt={nodes[0].asideMenuBackground.alt}
-                className="note-2"
-            />
-            <GatsbyImage
-                image={getImage(nodes[0].asideMenuBackground)}
-                alt={nodes[0].asideMenuBackground.alt}
-                className="note-3"
-            /> */}
+        <StyledAsideMenuWrapper
+            // @ts-ignore
+            $gallery={gallery}
+            $filliate={filliate}
+            $isOpen={isOpen}
+            $widthOfWindow={widthOfWindow}
+        >
             <StyledNavigationMenuRoot orientation="vertical">
                 <StyledNavigationMenuList>
                     {elems.map(
@@ -237,4 +226,4 @@ const AsideMenu = ({ gallery, filliate }) => {
     );
 };
 
-export default AsideMenu;
+export default React.memo(AsideMenu);
