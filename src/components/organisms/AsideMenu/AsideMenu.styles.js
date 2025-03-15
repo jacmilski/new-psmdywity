@@ -5,7 +5,9 @@ export const StyledAsideMenuWrapper = styled.div`
     display: ${({
         // @ts-ignore
         $isOpen,
-    }) => ($isOpen ? 'flex' : 'none')};
+        // @ts-ignore
+        $widthOfWindow,
+    }) => ($isOpen && $widthOfWindow < 768 ? 'flex' : 'none')};
     background-color: var(--yellow-3);
     //position: absolute;
     //top: 450px;

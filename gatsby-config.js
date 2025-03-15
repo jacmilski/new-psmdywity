@@ -7,6 +7,10 @@ require('dotenv').config();
 module.exports = {
     flags: {
         DEV_SSR: true,
+        FAST_DEV: true,
+        //PRESERVE_FILE_DOWNLOAD_CACHE: true,
+        //PARALLEL_SOURCING: true,
+        //DETECT_NODE_MUTATIONS: true,
     },
     siteMetadata: {
         title: `psm-dywity`,

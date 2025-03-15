@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyledHeader } from './Header.styles';
+import HamburgerButton from '../../atoms/HamburgerButton/HamburgerButton';
 import Logo from '../../atoms/Logo/Logo';
 import Nav from '../Nav/Nav';
-import HamburgerButton from '../../atoms/HamburgerButton/HamburgerButton';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);

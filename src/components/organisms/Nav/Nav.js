@@ -3,22 +3,32 @@ import FilliateLink from '../../atoms/Link/FilliateLink';
 import { NavLabels } from './Nav.data';
 import { StyledNav } from './Nav.styles';
 import AsideMenu from '../AsideMenu/AsideMenu';
+import useIsSSR from '../../../hooks/useIsSSR';
 
 const Nav = ({ isOpen, closeMenu }) => {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const isSSR = useIsSSR();
+
+    const [windowWidth, setWindowWidth] = useState(0);
 
     useEffect(() => {
+        if (isSSR) return;
         window.addEventListener('resize', () => {
             setWindowWidth((prev) => window.innerWidth);
         });
-    }, []);
+
+        return () => {
+            window.removeEventListener('resize', () => {
+                setWindowWidth((prev) => window.innerWidth);
+            });
+        };
+    }, [isSSR]);
 
     return (
         <StyledNav
             // @ts-ignore
             $isOpen={isOpen}
             onClick={closeMenu}
-            $widthOfWindow={windowWidth}
+            $widthOfWindow={windowWidth} //windowWidth
         >
             <div className="links-wrapper">
                 <FilliateLink
@@ -58,13 +68,13 @@ const Nav = ({ isOpen, closeMenu }) => {
                     className={undefined}
                 />
             </div>
-            {isOpen && windowWidth < 768 ? (
+            {isOpen && windowWidth < 768 ? ( //&& windowWidth < 768
                 <AsideMenu
                     gallery={undefined}
                     filliate={undefined}
                     isOpen={isOpen}
                     // @ts-ignore
-                    widthOfWindow={windowWidth}
+                    widthOfWindow={windowWidth} //windowWidth
                 />
             ) : null}
         </StyledNav>
