@@ -4,6 +4,7 @@ import ContentLayout from '../../../../../templates/ContentLayout/ContentLayout'
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import Gallery from '../../../../../organisms/Gallery/Gallery';
 import Aside from '../../../../../organisms/Aside/Aside';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const Administration = () => {
     const { datoCmsAdministrationGallery } = useStaticQuery(graphql`
@@ -25,6 +26,7 @@ const Administration = () => {
 
     return (
         <ContentLayout>
+            <TitleBanner title={`Pracownicy administracji`} />
             <Aside gallery={true} filliate={undefined} />
             <Gallery
                 data={photos}

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { StyledDeliveringAddress } from './DeliveringAddress.styles';
 import Heading from '../../../../atoms/Headings/Heading';
 import InfoBadge from '../../../../atoms/InfoBadge/InfoBadge';
+import TitleBanner from '../../../TitleBanner/TitleBanner';
 
 const DeliveringAddress = () => {
     const {
@@ -20,9 +21,12 @@ const DeliveringAddress = () => {
 
     return (
         <StyledDeliveringAddress>
-            <Heading type="h2" title={title} teachers={undefined} />
-            <InfoBadge text={validDate} date={date} url="/" label="Start" />
-            <p>{address}</p>
+            <TitleBanner title={'Adres do doręczeń'} />
+            <div className="info">
+                <Heading type="h2" title={title} teachers={undefined} />
+                <InfoBadge text={validDate} date={date} url="/" label="Start" />
+                <p>{address}</p>
+            </div>
         </StyledDeliveringAddress>
     );
 };

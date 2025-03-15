@@ -82,6 +82,16 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                         {images &&
                             // @ts-ignore
                             images.map((image, index) => {
+                                // @ts-ignore
+                                console.log(
+                                    'Z Gallery',
+                                    String(
+                                        (new Date().getUTCMilliseconds() +
+                                            index) /
+                                            new Date().getUTCMilliseconds()
+                                        // @ts-ignore
+                                    ) + image.originalId
+                                );
                                 const imgEl = (
                                     <img
                                         src={
@@ -117,7 +127,16 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                                     <figure>
                                         <StyledGalleriaCard
                                             className="col-3"
-                                            key={index}
+                                            // @ts-ignore
+                                            key={
+                                                // @ts-ignore
+                                                String(
+                                                    (new Date().getUTCMilliseconds() +
+                                                        index) /
+                                                        new Date().getUTCMilliseconds()
+                                                    // @ts-ignore
+                                                ) + image.originalId
+                                            }
                                             style={{
                                                 width: '100%',
                                                 display: ' flex',

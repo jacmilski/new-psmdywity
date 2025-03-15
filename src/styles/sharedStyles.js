@@ -40,3 +40,24 @@ export const docsLinksStyles = css`
         }
     }
 `;
+
+export const titleBannerStyles = css`
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    & .info {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+
+        @media only screen and (min-width: 768px) {
+            padding: 30px 40px;
+        }
+
+        & p {
+            color: var(--black-3);
+            font-size: var(--font-22);
+        }
+    }
+`;

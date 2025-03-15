@@ -13,6 +13,8 @@ const Aside = ({ gallery, filliate }) => {
                 gallery={gallery}
                 // @ts-ignore
                 filliate={filliate}
+                isOpen={undefined}
+                widthOfWindow={undefined}
             />
         </StyledAside>
     );

@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyledMusicianFirstClassGallery } from './MusicianFirstClassGallery.styles';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const MusicianFirstClassGallery = () => {
     return (
         <StyledMusicianFirstClassGallery>
-            MusicianFirsClassGallery
+            <TitleBanner title={`Muzyk I Klasa - Galeria`} />
+            <div className="info">MusicianFirsClassGallery</div>
         </StyledMusicianFirstClassGallery>
     );
 };

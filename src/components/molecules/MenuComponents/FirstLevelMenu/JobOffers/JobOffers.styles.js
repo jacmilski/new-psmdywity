@@ -1,13 +1,8 @@
 import styled from 'styled-components';
+import { titleBannerStyles } from '../../../../../styles/sharedStyles';
 
 export const StyledJobOffers = styled.div`
-    width: 100%;
-    padding: 20px;
-    height: 100%;
-
-    @media only screen and (min-width: 768px) {
-        padding: 30px 40px;
-    }
+    ${titleBannerStyles};
 `;
 
 export const JobContent = styled.div`

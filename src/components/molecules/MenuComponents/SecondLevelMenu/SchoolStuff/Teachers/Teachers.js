@@ -8,6 +8,7 @@ import {
     StyledTeachersWrapper,
 } from './Teachers.styles';
 import Aside from '../../../../../organisms/Aside/Aside';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const Teachers = () => {
     const { datoCmsTeachersGallery } = useStaticQuery(graphql`
@@ -23,6 +24,7 @@ const Teachers = () => {
                     photos {
                         alt
                         title
+                        originalId
                         gatsbyImageData
                     }
                 }
@@ -30,10 +32,9 @@ const Teachers = () => {
         }
     `);
 
-    console.log(datoCmsTeachersGallery.teachersSection);
-
     return (
         <ContentLayout>
+            <TitleBanner title={`Pedagodzy`} />
             <Aside gallery={true} filliate={undefined} />
             <StyledTeachersWrapper>
                 <StyledHeadingsWrapper>
@@ -49,16 +50,24 @@ const Teachers = () => {
                     />
                     <p>{datoCmsTeachersGallery.description}</p>
                 </StyledHeadingsWrapper>
-                {datoCmsTeachersGallery.teachersSection.map((section) => (
-                    <Gallery
-                        data={section.photos}
-                        title={section.title}
-                        subtitle={section.subtitle}
-                        key={section.originalId}
-                        // @ts-ignore
-                        teachers={true}
-                    />
-                ))}
+                {datoCmsTeachersGallery.teachersSection.map(
+                    (section, index) => (
+                        <Gallery
+                            data={section.photos}
+                            title={section.title}
+                            subtitle={section.subtitle}
+                            key={
+                                section.originalId +
+                                String(
+                                    (new Date().getMilliseconds() + index) /
+                                        new Date().getMilliseconds()
+                                )
+                            }
+                            // @ts-ignore
+                            teachers={true}
+                        />
+                    )
+                )}
             </StyledTeachersWrapper>
         </ContentLayout>
     );

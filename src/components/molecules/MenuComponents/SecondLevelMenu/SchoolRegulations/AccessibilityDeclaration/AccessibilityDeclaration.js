@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { StyledAccessibilityDeaclaration } from './AccessibilityDeclaration.styles';
 import InfoBadge from '../../../../../atoms/InfoBadge/InfoBadge';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const AccessibilityDeclaration = () => {
     const {
@@ -23,16 +24,19 @@ const AccessibilityDeclaration = () => {
 
     return (
         <StyledAccessibilityDeaclaration>
-            <InfoBadge text={validDate} date={date} url="/" label="Start" />
-            <ul>
-                {document.map((doc) => (
-                    <li key={doc.originalId}>
-                        <a href={doc.url} target="_blank" rel="noreferrer">
-                            {doc.title}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+            <TitleBanner title={`Deklaracja dostępności`} />
+            <div className="info">
+                <InfoBadge text={validDate} date={date} url="/" label="Start" />
+                <ul>
+                    {document.map((doc) => (
+                        <li key={doc.originalId}>
+                            <a href={doc.url} target="_blank" rel="noreferrer">
+                                {doc.title}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </StyledAccessibilityDeaclaration>
     );
 };

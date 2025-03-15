@@ -1,8 +1,14 @@
 import React from 'react';
 import { StyledDiplomas } from './Diplomas.styles';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const Diplomas = () => {
-    return <StyledDiplomas>Diplomas</StyledDiplomas>;
+    return (
+        <StyledDiplomas>
+            <TitleBanner title={`Dyplomy`} />
+            <div className="info">Dyplomy</div>
+        </StyledDiplomas>
+    );
 };
 
 export default Diplomas;

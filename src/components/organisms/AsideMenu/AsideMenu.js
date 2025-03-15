@@ -73,8 +73,6 @@ const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
         }
     `);
 
-    //console.log(nodes);
-
     const [{ elementyMenu: elems }] = nodes;
 
     return (
@@ -124,7 +122,7 @@ const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
                                                     labels.EVENTS_ARCHIVE ||
                                                 slug ===
                                                     labels.SCHOOL_REGULATIONS
-                                                    ? '#'
+                                                    ? ''
                                                     : `/${slug}/`
                                             }
                                         >

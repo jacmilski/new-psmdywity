@@ -1,34 +1,21 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { memo } from 'react';
 import FilliateLink from '../../atoms/Link/FilliateLink';
 import { NavLabels } from './Nav.data';
 import { StyledNav } from './Nav.styles';
 import AsideMenu from '../AsideMenu/AsideMenu';
 import useIsSSR from '../../../hooks/useIsSSR';
+import useWindowWidth from '../../../hooks/useWindowWidth';
 
 const Nav = ({ isOpen, closeMenu }) => {
     const isSSR = useIsSSR();
-
-    const [windowWidth, setWindowWidth] = useState(0);
-
-    useEffect(() => {
-        if (isSSR) return;
-        window.addEventListener('resize', () => {
-            setWindowWidth((prev) => window.innerWidth);
-        });
-
-        return () => {
-            window.removeEventListener('resize', () => {
-                setWindowWidth((prev) => window.innerWidth);
-            });
-        };
-    }, [isSSR]);
+    const windowWidth = useWindowWidth(isSSR);
 
     return (
         <StyledNav
             // @ts-ignore
             $isOpen={isOpen}
             onClick={closeMenu}
-            $widthOfWindow={windowWidth} //windowWidth
+            $widthOfWindow={windowWidth}
         >
             <div className="links-wrapper">
                 <FilliateLink
@@ -68,13 +55,13 @@ const Nav = ({ isOpen, closeMenu }) => {
                     className={undefined}
                 />
             </div>
-            {isOpen && windowWidth < 768 ? ( //&& windowWidth < 768
+            {isOpen && windowWidth < 768 ? (
                 <AsideMenu
                     gallery={undefined}
                     filliate={undefined}
                     isOpen={isOpen}
                     // @ts-ignore
-                    widthOfWindow={windowWidth} //windowWidth
+                    widthOfWindow={windowWidth}
                 />
             ) : null}
         </StyledNav>

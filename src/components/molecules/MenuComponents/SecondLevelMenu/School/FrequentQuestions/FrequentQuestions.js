@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyledFrequentQuestionsWrapper } from './FrequentQuestions.styles';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const FrequentQuestions = () => {
     return (
         <StyledFrequentQuestionsWrapper>
-            FrequentQuestions
+            <TitleBanner title={`Najczęstsze pytania`} />
+            <div className="info">Najczęstsze pytania</div>
         </StyledFrequentQuestionsWrapper>
     );
 };

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import ContentLayout from '../../../../../templates/ContentLayout/ContentLayout';
 import Gallery from '../../../../../organisms/Gallery/Gallery';
 import Aside from '../../../../../organisms/Aside/Aside';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const Directors = () => {
     const { datoCmsDirectorsGallery } = useStaticQuery(graphql`
@@ -13,6 +14,7 @@ const Directors = () => {
                 photos {
                     alt
                     title
+                    originalId
                     gatsbyImageData
                 }
             }
@@ -23,6 +25,7 @@ const Directors = () => {
 
     return (
         <ContentLayout>
+            <TitleBanner title={`Dyrekcja`} />
             <Aside gallery={true} filliate={undefined} />
             <Gallery
                 data={photos}

@@ -6,6 +6,7 @@ import {
 } from './DataSecurity.styles';
 import Heading from '../../../../../atoms/Headings/Heading';
 import InfoBadge from '../../../../../atoms/InfoBadge/InfoBadge';
+import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
 const DataSecurity = () => {
     const {
@@ -28,21 +29,28 @@ const DataSecurity = () => {
 
     return (
         <StyledDataSecurity>
-            <Heading type="h2" title={`Ochrona Danych Osobowych`} />
-            <InfoBadge text={validDate} date={date} url="/" label="Start" />
-            <ul>
-                {document.map((doc) => (
-                    <li key={doc.originalId}>
-                        <a href={doc.url} target="_blanc" rel="noreferrer">
-                            {doc.title}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-            <Heading type="h3" title="Kontakt" />
-            <StyledContactWrapper>
-                <pre>{contactData}</pre>
-            </StyledContactWrapper>
+            <TitleBanner title={`Ochrona danych osobowych`} />
+            <div className="info">
+                <Heading
+                    type="h2"
+                    title={`Ochrona Danych Osobowych`}
+                    teachers={undefined}
+                />
+                <InfoBadge text={validDate} date={date} url="/" label="Start" />
+                <ul>
+                    {document.map((doc) => (
+                        <li key={doc.originalId}>
+                            <a href={doc.url} target="_blanc" rel="noreferrer">
+                                {doc.title}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+                <Heading type="h3" title="Kontakt" teachers={undefined} />
+                <StyledContactWrapper>
+                    <pre>{contactData}</pre>
+                </StyledContactWrapper>
+            </div>
         </StyledDataSecurity>
     );
 };
