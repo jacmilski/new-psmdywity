@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import {
+    schoolStufContentStyles,
+    titleBannerStyles,
+} from '../../../../../../styles/sharedStyles';
 
 export const StyledTeachersWrapper = styled.div`
     width: 100%;
@@ -6,6 +10,8 @@ export const StyledTeachersWrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding: 20px;
+
+    ${titleBannerStyles};
 
     & h1 {
         padding-bottom: 0;
@@ -21,8 +27,13 @@ export const StyledTeachersWrapper = styled.div`
     }
 `;
 
+export const StyledContentWrapper = styled.div`
+    ${schoolStufContentStyles}
+`;
+
 export const StyledHeadingsWrapper = styled.div`
     width: 100%;
+    padding: 20px 20px;
 
     & h1 {
         padding-left: 0 !important;

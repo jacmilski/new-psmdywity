@@ -5,6 +5,7 @@ import HeroSection from '../components/organisms/HeroSection/HeroSection';
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import 'primereact/resources/primereact.min.css';
+import AsideMenu from '../components/organisms/AsideMenu/AsideMenu';
 
 const IndexPage = ({ data }) => {
     const {
@@ -16,11 +17,17 @@ const IndexPage = ({ data }) => {
 
     return (
         <PrimeReactProvider>
-            <main style={{ position: 'relative' }}>
+            <main>
                 <HeroSection
                     title={titleOfHeroImage}
                     image={gatsbyImageData}
                     alt={alt}
+                />
+                <AsideMenu
+                    gallery={undefined}
+                    filliate={undefined}
+                    isOpen={undefined}
+                    widthOfWindow={undefined}
                 />
             </main>
         </PrimeReactProvider>

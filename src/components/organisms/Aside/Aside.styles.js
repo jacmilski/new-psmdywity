@@ -11,10 +11,6 @@ export const StyledAside = styled.aside`
         width: auto;
         display: block;
         padding: 0;
-        /* margin: ${({
-            // @ts-ignore
-            $filliate,
-        }) => ($filliate ? '0 0' : '10px 0')}; */
         margin: 0;
     }
 

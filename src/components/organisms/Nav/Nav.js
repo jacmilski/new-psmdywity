@@ -2,11 +2,10 @@ import React, { memo } from 'react';
 import FilliateLink from '../../atoms/Link/FilliateLink';
 import { NavLabels } from './Nav.data';
 import { StyledNav } from './Nav.styles';
-import AsideMenu from '../AsideMenu/AsideMenu';
 import useIsSSR from '../../../hooks/useIsSSR';
 import useWindowWidth from '../../../hooks/useWindowWidth';
 
-const Nav = ({ isOpen, closeMenu }) => {
+const Nav = ({ isOpen }) => {
     const isSSR = useIsSSR();
     const windowWidth = useWindowWidth(isSSR);
 
@@ -14,7 +13,6 @@ const Nav = ({ isOpen, closeMenu }) => {
         <StyledNav
             // @ts-ignore
             $isOpen={isOpen}
-            onClick={closeMenu}
             $widthOfWindow={windowWidth}
         >
             <div className="links-wrapper">
@@ -55,15 +53,6 @@ const Nav = ({ isOpen, closeMenu }) => {
                     className={undefined}
                 />
             </div>
-            {isOpen && windowWidth < 768 ? (
-                <AsideMenu
-                    gallery={undefined}
-                    filliate={undefined}
-                    isOpen={isOpen}
-                    // @ts-ignore
-                    widthOfWindow={windowWidth}
-                />
-            ) : null}
         </StyledNav>
     );
 };

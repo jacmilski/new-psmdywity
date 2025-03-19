@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import FilliateInfoBanner from '../components/organisms/FilliateInfoBanner/FilliateInfoBanner';
 import ContentLayout from '../components/templates/ContentLayout/ContentLayout';
@@ -90,4 +90,4 @@ const DywityPage = () => {
     );
 };
 
-export default DywityPage;
+export default memo(DywityPage);

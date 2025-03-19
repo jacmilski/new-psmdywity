@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import ContentLayout from '../../../../../templates/ContentLayout/ContentLayout';
 import Gallery from '../../../../../organisms/Gallery/Gallery';
 import Aside from '../../../../../organisms/Aside/Aside';
 import TitleBanner from '../../../../TitleBanner/TitleBanner';
+import { StyledContentWrapper, StyledLeadersWrapper } from './Leaders.styles';
 
 const Leaders = () => {
     const { datoCmsLeadersGallery } = useStaticQuery(graphql`
@@ -24,16 +24,18 @@ const Leaders = () => {
     const { photos } = datoCmsLeadersGallery;
 
     return (
-        <ContentLayout>
+        <StyledLeadersWrapper>
             <TitleBanner title={`Kierownicy sekcji`} />
-            <Aside gallery={true} filliate={undefined} />
-            <Gallery
-                data={photos}
-                title={datoCmsLeadersGallery.title}
-                subtitle={datoCmsLeadersGallery.subtitle}
-                teachers={false}
-            />
-        </ContentLayout>
+            <StyledContentWrapper>
+                <Aside gallery={true} filliate={undefined} />
+                <Gallery
+                    data={photos}
+                    title={datoCmsLeadersGallery.title}
+                    subtitle={datoCmsLeadersGallery.subtitle}
+                    teachers={false}
+                />
+            </StyledContentWrapper>
+        </StyledLeadersWrapper>
     );
 };
 

@@ -7,14 +7,15 @@ export const StyledFilliateInfoBanner = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: relative !important;
 
-    .background {
+    & .background {
         width: 100%;
-        height: 100%;
-        position: absolute;
+        position: absolute !important;
         top: 0;
         left: 0;
+        bottom: 0;
+        right: 0;
         z-index: -1;
     }
 
@@ -25,6 +26,7 @@ export const StyledFilliateInfoBanner = styled.section`
     @media only screen and (min-width: 768px) {
         height: auto;
         padding-bottom: 30px;
+
         .gatsby-image-wrapper {
             height: 100%;
         }

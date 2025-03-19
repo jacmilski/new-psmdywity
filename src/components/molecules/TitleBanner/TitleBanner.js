@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo } from 'react';
 import {
     StyledBgImage,
     StyledTitle,
@@ -8,8 +8,6 @@ import {
 import BgImage from '../../../images/bg-1.jpg';
 import useIsSSR from '../../../hooks/useIsSSR';
 import useWindowWidth from '../../../hooks/useWindowWidth';
-
-/* Żeby wyłączyć ten banner przy isOpen=true trzeba zastosować context() */
 
 const TitleBanner = ({ title }) => {
     const isSSR = useIsSSR();

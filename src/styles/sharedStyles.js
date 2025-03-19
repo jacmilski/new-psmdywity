@@ -61,3 +61,18 @@ export const titleBannerStyles = css`
         }
     }
 `;
+
+export const schoolStufContentStyles = css`
+    width: 100%;
+    display: flex;
+
+    @media only screen and (min-width: 768px) {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 992px) {
+        width: 80%;
+        margin: 0 auto;
+    }
+`;

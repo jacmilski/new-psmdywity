@@ -2,41 +2,12 @@ import { NavigationMenu } from 'radix-ui';
 import styled from 'styled-components';
 
 export const StyledAsideMenuWrapper = styled.div`
-    display: ${({
-        // @ts-ignore
-        $isOpen,
-        // @ts-ignore
-        $widthOfWindow,
-    }) => ($isOpen && $widthOfWindow < 768 ? 'flex' : 'none')};
+    display: flex;
     background-color: var(--yellow-3);
     width: 100%;
-    padding: ${({
-        // @ts-ignore
-        $isOpen,
-        // @ts-ignore
-        $widthOfWindow,
-    }) => ($isOpen && $widthOfWindow < 768 ? '20px' : 'unset')};
-    min-width: ${({
-        // @ts-ignore
-        $gallery,
-    }) => ($gallery ? '210px' : '170px')};
-    z-index: 1000;
-
-    @media only screen and (min-width: 768px) {
-        display: block;
-        padding: ${({
-            // @ts-ignore
-            $filliate,
-        }) => ($filliate ? '30px 15px' : '30px 10px')};
-        max-width: ${({
-            // @ts-ignore
-            $gallery,
-        }) => ($gallery ? '250px' : null)};
-
-        & .gatsby-image-wrapper {
-            display: none;
-        }
-    }
+    padding: 20px;
+    min-width: 210px;
+    z-index: 1002; // czy więcej?
 `;
 
 export const StyledNavigationMenuRoot = styled(NavigationMenu.Root)``;
@@ -64,5 +35,9 @@ export const StyledNavigationMenuTrigger = styled(NavigationMenu.Trigger)`
     }
 `;
 export const StyledNavigationMenuContent = styled(NavigationMenu.Content)`
+    margin-left: 15px;
+`;
+
+export const StyledNavigationMenuSub = styled(NavigationMenu.Sub)`
     margin-left: 15px;
 `;

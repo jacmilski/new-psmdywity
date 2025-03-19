@@ -8,10 +8,10 @@ import {
     StyledNavigationMenuList,
     StyledNavigationMenuRoot,
     StyledNavigationMenuTrigger,
-} from './AsideMenu.styles';
+} from './AsideMenuMobile.styles';
 import labels from '../../../utilities/labels';
 
-const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
+const AsideMenuCopy = ({ isOpen }) => {
     const {
         allDatoCmsAsideMenu: { nodes },
     } = useStaticQuery(graphql`
@@ -72,10 +72,7 @@ const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
     return (
         <StyledAsideMenuWrapper
             // @ts-ignore
-            $gallery={gallery}
-            $filliate={filliate}
             $isOpen={isOpen}
-            $widthOfWindow={widthOfWindow}
         >
             <StyledNavigationMenuRoot orientation="vertical">
                 <StyledNavigationMenuList>
@@ -117,7 +114,7 @@ const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
                                 </StyledNavigationMenuTrigger>
                             )}
                             {elem.submenuElement.map((elem) => {
-                                // console.log('submenuElements', elem);
+                                console.log('submenuElements', elem);
                                 return (
                                     <StyledNavigationMenuContent
                                         key={elem.originalId}
@@ -136,4 +133,4 @@ const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
     );
 };
 
-export default React.memo(AsideMenu);
+export default React.memo(AsideMenuCopy);

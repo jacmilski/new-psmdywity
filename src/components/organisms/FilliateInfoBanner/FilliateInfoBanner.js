@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import {
     StyledFilliateContent,
@@ -60,4 +60,4 @@ const FilliateInfoBanner = ({ data }) => {
     );
 };
 
-export default memo(FilliateInfoBanner);
+export default FilliateInfoBanner;
