@@ -84,7 +84,9 @@ const AsideMenuCopy = ({ isOpen }) => {
                             elem.slug === labels.EVENTS_ARCHIVE ||
                             elem.slug === labels.CEA ||
                             elem.slug === labels.ELECTRONIC_DIARY ? (
-                                <StyledNavigationMenuTrigger>
+                                <StyledNavigationMenuTrigger
+                                    key={elem.originalId}
+                                >
                                     <a
                                         href={
                                             elem.webPageLink &&
@@ -101,7 +103,7 @@ const AsideMenuCopy = ({ isOpen }) => {
                               elem.slug === labels.OUR_ACHIEVEMENTS ||
                               elem.slug === labels.EVENTS_ARCHIVE ||
                               elem.slug === labels.SCHOOL_REGULATIONS ? (
-                                <StyledNavigationMenuTrigger>
+                                <StyledNavigationMenuTrigger className="link">
                                     {elem.title}
                                 </StyledNavigationMenuTrigger>
                             ) : (
@@ -113,18 +115,17 @@ const AsideMenuCopy = ({ isOpen }) => {
                                     </Link>
                                 </StyledNavigationMenuTrigger>
                             )}
-                            {elem.submenuElement.map((elem) => {
-                                console.log('submenuElements', elem);
-                                return (
-                                    <StyledNavigationMenuContent
-                                        key={elem.originalId}
-                                    >
+                            {elem.submenuElement.map((elem) => (
+                                <StyledNavigationMenuContent
+                                    key={elem.originalId}
+                                >
+                                    <StyledNavigationMenuTrigger>
                                         <Link to={`/${elem.slug}/`}>
                                             {elem.title}
                                         </Link>
-                                    </StyledNavigationMenuContent>
-                                );
-                            })}
+                                    </StyledNavigationMenuTrigger>
+                                </StyledNavigationMenuContent>
+                            ))}
                         </StyledNavigationMenuItem>
                     ))}
                 </StyledNavigationMenuList>

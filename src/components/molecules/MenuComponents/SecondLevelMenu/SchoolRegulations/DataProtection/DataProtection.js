@@ -2,13 +2,13 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import {
     StyledContactWrapper,
-    StyledDataSecurity,
-} from './DataSecurity.styles';
+    StyledDataProtection,
+} from './DataProtection.styles';
 import Heading from '../../../../../atoms/Headings/Heading';
 import InfoBadge from '../../../../../atoms/InfoBadge/InfoBadge';
 import TitleBanner from '../../../../TitleBanner/TitleBanner';
 
-const DataSecurity = () => {
+const DataProtection = () => {
     const {
         datoCmsDataSecurity: { validDate, date, contactData, document },
     } = useStaticQuery(graphql`
@@ -28,7 +28,7 @@ const DataSecurity = () => {
     `);
 
     return (
-        <StyledDataSecurity>
+        <StyledDataProtection>
             <TitleBanner title={`Ochrona danych osobowych`} />
             <div className="info">
                 <Heading
@@ -51,8 +51,8 @@ const DataSecurity = () => {
                     <pre>{contactData}</pre>
                 </StyledContactWrapper>
             </div>
-        </StyledDataSecurity>
+        </StyledDataProtection>
     );
 };
 
-export default DataSecurity;
+export default DataProtection;

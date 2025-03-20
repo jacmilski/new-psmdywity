@@ -17,6 +17,7 @@ import FrequentQuestions from '../../molecules/MenuComponents/SecondLevelMenu/Sc
 import TeachingMethods from '../../molecules/MenuComponents/SecondLevelMenu/School/TeachingMethods/TeachingMethods';
 //import DataSecurity from '../../molecules/MenuComponents/SecondLevelMenu/SchoolRegulations/DataSecurity/DataSecurity';
 import labels from '../../../utilities/labels';
+import DataProtection from '../../molecules/MenuComponents/SecondLevelMenu/SchoolRegulations/DataProtection/DataProtection';
 
 const SecondLevelPagesTemplate = ({
     pageContext: { originalId, slug, title },
@@ -50,6 +51,8 @@ const SecondLevelPagesTemplate = ({
                 <Posters />
             ) : slug === labels.SCHOOL_DOCUMENTS ? (
                 <SchoolDocuments />
+            ) : slug === labels.DATA_PROTECTION ? (
+                <DataProtection />
             ) : slug === labels.ACCESSIBILITY_DECLARATION ? (
                 <AccessibilityDeclaration />
             ) : slug === labels.MUSICIAN_FIRST_CLASS_GALLERY ? (

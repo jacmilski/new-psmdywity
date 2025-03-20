@@ -4,7 +4,7 @@ import {
     titleBannerStyles,
 } from '../../../../../../styles/sharedStyles';
 
-export const StyledDataSecurity = styled.div`
+export const StyledDataProtection = styled.div`
     ${titleBannerStyles};
 
     ${docsLinksStyles};

@@ -22,6 +22,11 @@ export const StyledNavigationMenuItem = styled(NavigationMenu.Item)`
     max-width: 190px;
 `;
 export const StyledNavigationMenuTrigger = styled(NavigationMenu.Trigger)`
+    &.link {
+        color: var(--black-3);
+        font-weight: 700;
+    }
+
     & a {
         text-decoration: none;
         color: var(--black-3);
