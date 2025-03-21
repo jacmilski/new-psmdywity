@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-    schoolStufContentStyles,
+    schoolStuffContentStyles,
     titleBannerStyles,
 } from '../../../../../../styles/sharedStyles';
 
@@ -9,5 +9,5 @@ export const StyledLeadersWrapper = styled.div`
 `;
 
 export const StyledContentWrapper = styled.div`
-    ${schoolStufContentStyles}
+    ${schoolStuffContentStyles}
 `;

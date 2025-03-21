@@ -62,7 +62,7 @@ export const titleBannerStyles = css`
     }
 `;
 
-export const schoolStufContentStyles = css`
+export const schoolStuffContentStyles = css`
     width: 100%;
     display: flex;
 

@@ -33,6 +33,7 @@ const Leaders = () => {
                     title={datoCmsLeadersGallery.title}
                     subtitle={datoCmsLeadersGallery.subtitle}
                     teachers={false}
+                    achievements={undefined}
                 />
             </StyledContentWrapper>
         </StyledLeadersWrapper>

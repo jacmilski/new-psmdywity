@@ -5,8 +5,8 @@ import Aside from '../../../../../organisms/Aside/Aside';
 import TitleBanner from '../../../../TitleBanner/TitleBanner';
 import {
     StyledContentWrapper,
-    StyledDirectorWrapper,
-} from './Directoes.styles';
+    StyledDirectorsWrapper,
+} from './Directors.styles';
 
 const Directors = () => {
     const { datoCmsDirectorsGallery } = useStaticQuery(graphql`
@@ -27,7 +27,7 @@ const Directors = () => {
     const { photos } = datoCmsDirectorsGallery;
 
     return (
-        <StyledDirectorWrapper>
+        <StyledDirectorsWrapper>
             <TitleBanner
                 title={`Dyrekcja`}
                 // @ts-ignore
@@ -39,9 +39,10 @@ const Directors = () => {
                     title={datoCmsDirectorsGallery.title}
                     subtitle={datoCmsDirectorsGallery.subtitle}
                     teachers={false}
+                    achievements={undefined}
                 />
             </StyledContentWrapper>
-        </StyledDirectorWrapper>
+        </StyledDirectorsWrapper>
     );
 };
 

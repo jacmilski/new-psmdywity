@@ -15,7 +15,6 @@ import Instruments from '../../molecules/MenuComponents/SecondLevelMenu/School/I
 import WhyWorth from '../../molecules/MenuComponents/SecondLevelMenu/School/WhyWorth/WhyWorth';
 import FrequentQuestions from '../../molecules/MenuComponents/SecondLevelMenu/School/FrequentQuestions/FrequentQuestions';
 import TeachingMethods from '../../molecules/MenuComponents/SecondLevelMenu/School/TeachingMethods/TeachingMethods';
-//import DataSecurity from '../../molecules/MenuComponents/SecondLevelMenu/SchoolRegulations/DataSecurity/DataSecurity';
 import labels from '../../../utilities/labels';
 import DataProtection from '../../molecules/MenuComponents/SecondLevelMenu/SchoolRegulations/DataProtection/DataProtection';
 

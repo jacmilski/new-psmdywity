@@ -66,6 +66,7 @@ const Teachers = () => {
                                 }
                                 // @ts-ignore
                                 teachers={true}
+                                achievements={undefined}
                             />
                         )
                     )}

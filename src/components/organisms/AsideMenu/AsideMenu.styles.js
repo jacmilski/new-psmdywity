@@ -19,7 +19,7 @@ export const StyledAsideMenuWrapper = styled.div`
     min-width: ${({
         // @ts-ignore
         $gallery,
-    }) => ($gallery ? '210px' : '170px')};
+    }) => ($gallery ? '198px' : '170px')};
     z-index: 1000;
 
     @media only screen and (min-width: 768px) {

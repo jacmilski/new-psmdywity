@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-    schoolStufContentStyles,
+    schoolStuffContentStyles,
     titleBannerStyles,
 } from '../../../../../../styles/sharedStyles';
 
@@ -28,7 +28,7 @@ export const StyledTeachersWrapper = styled.div`
 `;
 
 export const StyledContentWrapper = styled.div`
-    ${schoolStufContentStyles}
+    ${schoolStuffContentStyles}
 `;
 
 export const StyledHeadingsWrapper = styled.div`

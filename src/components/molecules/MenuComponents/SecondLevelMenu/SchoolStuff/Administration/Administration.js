@@ -37,6 +37,7 @@ const Administration = () => {
                     title={datoCmsAdministrationGallery.title}
                     subtitle={datoCmsAdministrationGallery.subtitle}
                     teachers={false}
+                    achievements={undefined}
                 />
             </StyledContentWrapper>
         </StyledAdministrationWrapper>

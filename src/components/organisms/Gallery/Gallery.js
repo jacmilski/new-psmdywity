@@ -9,7 +9,7 @@ import {
 import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import Heading from '../../atoms/Headings/Heading';
 
-const Gallery = ({ data, title, subtitle, teachers }) => {
+const Gallery = ({ data, title, subtitle, teachers, achievements }) => {
     const [images, setImages] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0);
     const galleria = useRef(null);
@@ -83,15 +83,6 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                             // @ts-ignore
                             images.map((image, index) => {
                                 // @ts-ignore
-                                console.log(
-                                    'Z Gallery',
-                                    String(
-                                        (new Date().getUTCMilliseconds() +
-                                            index) /
-                                            new Date().getUTCMilliseconds()
-                                        // @ts-ignore
-                                    ) + image.originalId
-                                );
                                 const imgEl = (
                                     <img
                                         src={
@@ -145,12 +136,14 @@ const Gallery = ({ data, title, subtitle, teachers }) => {
                                             }}
                                         >
                                             {imgEl}
-                                            <figcaption>
-                                                {
-                                                    // @ts-ignore
-                                                    image.title
-                                                }
-                                            </figcaption>
+                                            {!achievements ? (
+                                                <figcaption>
+                                                    {
+                                                        // @ts-ignore
+                                                        image.title
+                                                    }
+                                                </figcaption>
+                                            ) : null}
                                         </StyledGalleriaCard>
                                     </figure>
                                 );
