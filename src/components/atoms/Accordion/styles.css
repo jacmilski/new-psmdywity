@@ -3,12 +3,12 @@
 }
 
 .AccordionChevron {
-    width: 30px;
-    height: 30px;
+    width: 30px !important;
+    height: 30px !important;
 }
 
 .AccordionChevron path {
-    fill: #eac953;
+    fill: #eac953 !important;
 }
 
 .AccordionTrigger[data-state='open'] > .AccordionChevron {

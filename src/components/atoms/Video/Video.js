@@ -16,7 +16,6 @@ const Video = ({ url, title, key }) => (
         width="100%"
         height="350px"
         referrerpolicy="strict-origin-when-cross-origin"
-        target="_blank"
     />
 );
 export default Video;
