@@ -2,14 +2,15 @@
     transition: transform 300ms;
 }
 
-svg {
+.AccordionChevron {
     width: 30px;
     height: 30px;
 }
 
-svg path {
+.AccordionChevron path {
     fill: #eac953;
 }
+
 .AccordionTrigger[data-state='open'] > .AccordionChevron {
     transform: rotate(180deg);
 }
