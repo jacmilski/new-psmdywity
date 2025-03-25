@@ -1,0 +1,63 @@
+.AccordionChevron {
+    transition: transform 300ms;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+svg path {
+    fill: #eac953;
+}
+.AccordionTrigger[data-state='open'] > .AccordionChevron {
+    transform: rotate(180deg);
+}
+
+.acc-root {
+    width: 100%;
+    padding: 20px;
+}
+.acc-item {
+    width: 100%;
+}
+.acc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    width: 100%;
+    background-color: var(--sage-3); /* olivedrab; */ /* #808836 */
+    border-bottom: 1px solid #cba726;
+}
+.acc-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.title {
+    color: var(--yellow-3); /* #eac953; */
+    font-size: var(--font-18);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+.acc-content {
+    width: 100%;
+    padding: 20px 30px;
+    border: var(--yellow-2) /* #cba726 */ solid 1px;
+    border-radius: 6px;
+    margin: 15px 0;
+
+    & iframe {
+        margin-top: 20px;
+    }
+}
+.description {
+    font-family: Lora, sans-serif;
+    font-size: var(--font-16);
+    font-weight: 400;
+    color: var(--black-3);
+}
