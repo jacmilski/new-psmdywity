@@ -3,12 +3,12 @@
 }
 
 .AccordionChevron {
-    width: 30px !important;
-    height: 30px !important;
+    width: 30px;
+    height: 30px;
 }
 
 .AccordionChevron path {
-    fill: #eac953 !important;
+    fill: #eac953;
 }
 
 .AccordionTrigger[data-state='open'] > .AccordionChevron {
@@ -17,11 +17,19 @@
 
 .acc-root {
     width: 100%;
-    padding: 20px;
+    padding: 20px 10px;
 }
+
+@media only screen and (min-width: 768px) {
+    .acc-root {
+        padding: 30px 20px;
+    }
+}
+
 .acc-item {
     width: 100%;
 }
+
 .acc-header {
     display: flex;
     justify-content: space-between;
@@ -31,6 +39,7 @@
     background-color: var(--sage-3); /* olivedrab; */ /* #808836 */
     border-bottom: 1px solid #cba726;
 }
+
 .acc-trigger {
     width: 100%;
     display: flex;
@@ -38,6 +47,7 @@
     align-items: center;
     cursor: pointer;
 }
+
 .title {
     color: var(--yellow-3); /* #eac953; */
     font-size: var(--font-18);
@@ -45,6 +55,7 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+
 .acc-content {
     width: 100%;
     padding: 20px 30px;
@@ -56,6 +67,7 @@
         margin-top: 20px;
     }
 }
+
 .description {
     font-family: Lora, sans-serif;
     font-size: var(--font-16);

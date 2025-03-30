@@ -32,10 +32,6 @@ const AccordionComp = ({
                                     className="AccordionChevron"
                                     aria-hidden
                                 />
-                                {/* <ChevronDownIcon
-                                className="AccordionChevron"
-                                aria-hidden
-                            /> */}
                             </Accordion.Trigger>
                         </Accordion.Header>
                         <Accordion.Content className="acc-content">
@@ -65,10 +61,6 @@ const AccordionComp = ({
                                         className="AccordionChevron"
                                         aria-hidden
                                     />
-                                    {/* <ChevronDownIcon
-                                    className="AccordionChevron"
-                                    aria-hidden
-                                /> */}
                                 </Accordion.Trigger>
                             </Accordion.Header>
                             <Accordion.Content className="acc-content">
