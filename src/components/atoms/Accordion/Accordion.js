@@ -3,7 +3,6 @@ import React from 'react';
 import { HiChevronUp } from 'react-icons/hi2';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Accordion } from 'radix-ui';
-import { ChevronDownIcon } from '@radix-ui/react-icons';
 import Heading from '../Headings/Heading';
 import Video from '../Video/Video';
 import './styles.css';
