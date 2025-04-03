@@ -59,7 +59,7 @@
 .acc-content {
     width: 100%;
     padding: 20px 30px;
-    border: var(--yellow-2) /* #cba726 */ solid 1px;
+    border: 1px solid var(--yellow-2); /* #cba726 */
     border-radius: 6px;
     margin: 15px 0;
 

@@ -6,6 +6,7 @@ import Header from '../../organisms/Header/Header';
 import HamburgerButtonCopy from '../../atoms/HamburgerButton/HamburgerButton_copy';
 import useIsSSR from '../../../hooks/useIsSSR';
 import useWindowWidth from '../../../hooks/useWindowWidth';
+import FooterInfo from '../../atoms/FooterInfo/FooterInfo';
 
 const GlobalLayout = ({ children }) => {
     const isSSR = useIsSSR();
@@ -37,7 +38,7 @@ const GlobalLayout = ({ children }) => {
                     <Header isOpen={isOpen} />
                 )}
                 {children}
-                Tu będzie Footer
+                <FooterInfo />
             </div>
         </IsOpenContext.Provider>
     );

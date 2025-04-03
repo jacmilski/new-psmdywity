@@ -6,10 +6,27 @@ import Aside from '../components/organisms/Aside/Aside';
 import { HorizontalDivider, NewsContainer } from '../styles/pagesSharedStyles';
 import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
 import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
+import FilliatePageFooter from '../components/organisms/FilliatePageFooter/FilliatePageFooter';
 
 const OlsztynekPage = () => {
-    const { datoCmsOlsztynek: data } = useStaticQuery(graphql`
+    const {
+        datoCmsOlsztynek: data,
+        datoCmsOlsztynekFooter,
+        datoCmsOlsztynek: address,
+    } = useStaticQuery(graphql`
         query OlsztynekDataQuery {
+            datoCmsOlsztynekFooter {
+                officeWorkingHours
+                schoolGeolocation {
+                    latitude
+                    longitude
+                }
+                filliateFooterList {
+                    title
+                    content
+                    originalId
+                }
+            }
             datoCmsOlsztynek {
                 schoolName
                 street
@@ -61,6 +78,15 @@ const OlsztynekPage = () => {
         }
     `);
 
+    const olsztynekData = {
+        schoolName: address.schoolName,
+        street: address.street,
+        postcode: address.postcode,
+        cityName: address.cityName,
+        telephone: address.telephone,
+        email: address.email,
+    };
+
     return (
         <>
             <FilliateInfoBanner data={data} />
@@ -81,6 +107,12 @@ const OlsztynekPage = () => {
                             );
                         })}
                 </NewsContainer>
+            </ContentLayout>
+            <ContentLayout>
+                <FilliatePageFooter
+                    data={datoCmsOlsztynekFooter}
+                    address={olsztynekData}
+                />
             </ContentLayout>
         </>
     );

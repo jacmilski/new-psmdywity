@@ -6,60 +6,83 @@ import Aside from '../components/organisms/Aside/Aside';
 import { HorizontalDivider, NewsContainer } from '../styles/pagesSharedStyles';
 import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
 import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
+import FilliatePageFooter from '../components/organisms/FilliatePageFooter/FilliatePageFooter';
 
 const DobreMiastoPage = () => {
-    const { datoCmsDobreMiasto: data } = useStaticQuery(graphql`
-        query DobreMiastoDataQuery {
-            datoCmsDobreMiasto {
-                schoolName
-                street
-                postcode
-                cityName
-                telephone
-                email
-                banner {
-                    gatsbyImageData
-                    alt
-                }
-                logo {
-                    gatsbyImageData
-                    alt
-                }
-                newsfeedList {
-                    title
-                    messageDate
-                    tag
-                    id
-                    filliates {
-                        ... on DatoCmsOlsztynek {
-                            id
-                            cityName
-                        }
-                        ... on DatoCmsDywity {
-                            id
-                            cityName
-                        }
-                        ... on DatoCmsBiskupiec {
-                            id
-                            cityName
-                        }
-                        ... on DatoCmsBarczewo {
-                            id
-                            cityName
-                        }
+    const { datoCmsDobreMiasto: data, datoCmsDobreMiastoFooter } =
+        useStaticQuery(graphql`
+            query DobreMiastoDataQuery {
+                datoCmsDobreMiastoFooter {
+                    officeWorkingHours
+                    schoolGeolocation {
+                        latitude
+                        longitude
                     }
-                    message
-                    imageForMessage {
+                    filliateFooterList {
+                        title
+                        content
+                        originalId
+                    }
+                }
+                datoCmsDobreMiasto {
+                    schoolName
+                    street
+                    postcode
+                    cityName
+                    telephone
+                    email
+                    banner {
                         gatsbyImageData
                         alt
                     }
-                    videoForMessage {
-                        url
+                    logo {
+                        gatsbyImageData
+                        alt
+                    }
+                    newsfeedList {
+                        title
+                        messageDate
+                        tag
+                        id
+                        filliates {
+                            ... on DatoCmsOlsztynek {
+                                id
+                                cityName
+                            }
+                            ... on DatoCmsDywity {
+                                id
+                                cityName
+                            }
+                            ... on DatoCmsBiskupiec {
+                                id
+                                cityName
+                            }
+                            ... on DatoCmsBarczewo {
+                                id
+                                cityName
+                            }
+                        }
+                        message
+                        imageForMessage {
+                            gatsbyImageData
+                            alt
+                        }
+                        videoForMessage {
+                            url
+                        }
                     }
                 }
             }
-        }
-    `);
+        `);
+
+    const dobreMiastoData = {
+        schoolName: data.schoolName,
+        street: data.street,
+        postcode: data.postcode,
+        cityName: data.cityName,
+        telephone: data.telephone,
+        email: data.email,
+    };
 
     return (
         <>
@@ -81,6 +104,12 @@ const DobreMiastoPage = () => {
                             );
                         })}
                 </NewsContainer>
+            </ContentLayout>
+            <ContentLayout>
+                <FilliatePageFooter
+                    data={datoCmsDobreMiastoFooter}
+                    address={dobreMiastoData}
+                />
             </ContentLayout>
         </>
     );

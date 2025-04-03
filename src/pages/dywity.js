@@ -6,10 +6,23 @@ import Aside from '../components/organisms/Aside/Aside';
 import { NewsContainer, HorizontalDivider } from '../styles/pagesSharedStyles';
 import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
 import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
+import FilliatePageFooter from '../components/organisms/FilliatePageFooter/FilliatePageFooter';
 
 const DywityPage = () => {
-    const { datoCmsDywity: data } = useStaticQuery(graphql`
+    const { datoCmsDywity: data, datoCmsDywityFooter } = useStaticQuery(graphql`
         query DywityDataQuery {
+            datoCmsDywityFooter {
+                officeWorkingHours
+                schoolGeolocation {
+                    latitude
+                    longitude
+                }
+                filliateFooterList {
+                    title
+                    content
+                    originalId
+                }
+            }
             datoCmsDywity {
                 schoolName
                 street
@@ -63,6 +76,15 @@ const DywityPage = () => {
         }
     `);
 
+    const dywityData = {
+        schoolName: data.schoolName,
+        street: data.street,
+        postcode: data.postcode,
+        cityName: data.cityName,
+        telephone: data.telephone,
+        email: data.email,
+    };
+
     return (
         <>
             <FilliateInfoBanner data={data} />
@@ -85,6 +107,12 @@ const DywityPage = () => {
                         })
                     }
                 </NewsContainer>
+            </ContentLayout>
+            <ContentLayout>
+                <FilliatePageFooter
+                    data={datoCmsDywityFooter}
+                    address={dywityData}
+                />
             </ContentLayout>
         </>
     );

@@ -7,6 +7,7 @@ import 'primereact/resources/themes/lara-light-cyan/theme.css';
 import 'primereact/resources/primereact.min.css';
 import AsideMenu from '../components/organisms/AsideMenu/AsideMenu';
 import AccordionComp from '../components/atoms/Accordion/Accordion';
+import FooterInfo from '../components/atoms/FooterInfo/FooterInfo';
 
 const IndexPage = ({ data }) => {
     const {
@@ -30,7 +31,6 @@ const IndexPage = ({ data }) => {
                     isOpen={undefined}
                     widthOfWindow={undefined}
                 />
-                <AccordionComp />
             </main>
         </PrimeReactProvider>
     );

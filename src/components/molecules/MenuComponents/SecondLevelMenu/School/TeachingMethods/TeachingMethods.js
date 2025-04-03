@@ -3,16 +3,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 import TitleBanner from '../../../../TitleBanner/TitleBanner';
 import {
     StyledContentWrapper,
-    StyledTabsContent,
     StyledTabsList,
     StyledTabsRoot,
     StyledTabsTrigger,
-    StyledTeachingMethodsContent,
     StyledTeachingMethodsWrapper,
 } from './TeachingMethods.styles';
 import Aside from '../../../../../organisms/Aside/Aside';
-import ReactHtmlParser from 'react-html-parser';
-import Heading from '../../../../../atoms/Headings/Heading';
 import TabsContent from '../../../../TabsContent/TabsContent';
 
 const TeachingMethods = () => {

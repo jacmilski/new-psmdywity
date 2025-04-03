@@ -6,10 +6,27 @@ import Aside from '../components/organisms/Aside/Aside';
 import { HorizontalDivider, NewsContainer } from '../styles/pagesSharedStyles';
 import NewsfeedHeadline from '../components/atoms/NewsfeedHeadline/NewsfeedHeadline';
 import Newsfeed from '../components/organisms/Newsfeed/Newsfeed';
+import FilliatePageFooter from '../components/organisms/FilliatePageFooter/FilliatePageFooter';
 
 const BarczewoPage = () => {
-    const { datoCmsBarczewo: data } = useStaticQuery(graphql`
+    const {
+        datoCmsBarczewo: data,
+        datoCmsBarczewoFooter,
+        datoCmsBarczewo: address,
+    } = useStaticQuery(graphql`
         query BarczewoDataQuery {
+            datoCmsBarczewoFooter {
+                officeWorkingHours
+                schoolGeolocation {
+                    latitude
+                    longitude
+                }
+                filliateFooterList {
+                    title
+                    content
+                    originalId
+                }
+            }
             datoCmsBarczewo {
                 schoolName
                 street
@@ -61,6 +78,15 @@ const BarczewoPage = () => {
         }
     `);
 
+    const barczewoData = {
+        schoolName: address.schoolName,
+        street: address.street,
+        postcode: address.postcode,
+        cityName: address.cityName,
+        telephone: address.telephone,
+        email: address.email,
+    };
+
     return (
         <>
             <FilliateInfoBanner data={data} />
@@ -81,6 +107,12 @@ const BarczewoPage = () => {
                             );
                         })}
                 </NewsContainer>
+            </ContentLayout>
+            <ContentLayout>
+                <FilliatePageFooter
+                    data={datoCmsBarczewoFooter}
+                    address={barczewoData}
+                />
             </ContentLayout>
         </>
     );
