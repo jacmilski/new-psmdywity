@@ -10,8 +10,12 @@ import {
     StyledNavigationMenuTrigger,
 } from './AsideMenuMobile.styles';
 import labels from '../../../utilities/labels';
+// @ts-ignore
+import MoveRightIcon from '../../../images/icons/icons8-move-right-24.png';
+// @ts-ignore
+import MoveLeftIcon from '../../../images/icons/icons8-move-left-24.png';
 
-const AsideMenuCopy = ({ isOpen }) => {
+const AsideMenuMobile = ({ isOpen, showMenu, isShownMenu }) => {
     const {
         allDatoCmsAsideMenu: { nodes },
     } = useStaticQuery(graphql`
@@ -74,6 +78,11 @@ const AsideMenuCopy = ({ isOpen }) => {
             // @ts-ignore
             $isOpen={isOpen}
         >
+            <img
+                src={isShownMenu ? MoveRightIcon : MoveLeftIcon}
+                alt="open or close menu panel"
+                onClick={() => showMenu()}
+            />
             <StyledNavigationMenuRoot orientation="vertical">
                 <StyledNavigationMenuList>
                     {elems.map((elem) => (
@@ -134,4 +143,4 @@ const AsideMenuCopy = ({ isOpen }) => {
     );
 };
 
-export default React.memo(AsideMenuCopy);
+export default React.memo(AsideMenuMobile);

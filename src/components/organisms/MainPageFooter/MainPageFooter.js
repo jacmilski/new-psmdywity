@@ -14,7 +14,6 @@ import Heading from '../../atoms/Headings/Heading';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import FilliateLink from '../../atoms/Link/FilliateLink';
 
 const MainPageFooter = ({ data }) => {
     const settings = {

@@ -2,12 +2,26 @@ import { NavigationMenu } from 'radix-ui';
 import styled from 'styled-components';
 
 export const StyledAsideMenuWrapper = styled.div`
+    position: relative;
     display: flex;
     background-color: var(--yellow-3);
     width: 100%;
     padding: 20px;
     min-width: 210px;
-    z-index: 1002; // czy więcej?
+    z-index: 1002;
+    border-radius: 10px;
+
+    & img {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: -12px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 `;
 
 export const StyledNavigationMenuRoot = styled(NavigationMenu.Root)``;

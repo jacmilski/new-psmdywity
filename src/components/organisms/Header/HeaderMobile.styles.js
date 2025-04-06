@@ -27,6 +27,11 @@ export const StyledHeaderWrapper = styled.header`
         grid-template-rows: 1fr;
         height: 100%;
         padding: 20px 10px;
+        margin-right: ${({
+            // @ts-ignore
+            $showAsideMenu,
+        }) => (!$showAsideMenu ? '-95%' : 'unset')};
+        transition: margin-right 0.6s ease-in-out;
 
         & .nav {
             width: 100%;

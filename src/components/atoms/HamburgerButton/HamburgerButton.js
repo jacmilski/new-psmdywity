@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { StyledHamburgerButton, StyledIcon } from './HamburgerButton.styles';
 // @ts-ignore
-import TransparentHamburgerIcon from '../../../images/icons/hamburger_btn_transparent_50.png';
+import OpenIcon from '../../../images/icons/icons8-menu-squared-48.png';
 // @ts-ignore
-import TransparentCloseButton from '../../../images/icons/close_transparent_50.png';
+import CloseIcon from '../../../images/icons/icons8-close-window-48.png';
 
 const HamburgerButton = ({ isOpen, openMenu }) => {
     return (
@@ -15,9 +15,9 @@ const HamburgerButton = ({ isOpen, openMenu }) => {
             type="button"
         >
             {isOpen ? (
-                <StyledIcon src={TransparentCloseButton} alt="zamknij menu" />
+                <StyledIcon src={CloseIcon} alt="zamknij menu" />
             ) : (
-                <StyledIcon src={TransparentHamburgerIcon} alt="otwórz menu" />
+                <StyledIcon src={OpenIcon} alt="otwórz menu" />
             )}
         </StyledHamburgerButton>
     );

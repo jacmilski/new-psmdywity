@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../../atoms/Logo/Logo';
 import AsideMenuMobile from '../AsideMenu/AsideMenuMobile';
 import FilliateLink from '../../atoms/Link/FilliateLink';
@@ -11,11 +11,14 @@ const HeaderMobile = ({ isOpen }) => {
     const isSSR = useIsSSR();
     const windowWidth = useWindowWidth(isSSR);
 
+    const [showAsideMenu, setShowAsideMenu] = useState(false);
+
     return (
         <StyledHeaderWrapper
             // @ts-ignore
             $isOpen={isOpen}
             $windowWidth={windowWidth}
+            $showAsideMenu={showAsideMenu}
         >
             <div className="logo">
                 <Logo isOpen={isOpen} />
@@ -66,7 +69,12 @@ const HeaderMobile = ({ isOpen }) => {
                         />
                     </div>
                 </div>
-                <AsideMenuMobile isOpen={isOpen} />
+                <AsideMenuMobile
+                    isOpen={isOpen}
+                    // @ts-ignore
+                    showMenu={() => setShowAsideMenu(!showAsideMenu)}
+                    isShownMenu={showAsideMenu}
+                />
             </div>
         </StyledHeaderWrapper>
     );

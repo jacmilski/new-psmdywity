@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 // @ts-ignore
-import TransparentHamburgerIcon from '../../../images/icons/hamburger_btn_transparent_50.png';
+import OpenIcon from '../../../images/icons/icons8-menu-squared-48.png';
 // @ts-ignore
-import TransparentCloseButton from '../../../images/icons/close_transparent_50.png';
+import CloseIcon from '../../../images/icons/icons8-close-window-48.png';
 import {
     StyledHamburgerButton,
     StyledIcon,
@@ -18,9 +18,9 @@ const HamburgerButtonCopy = ({ isOpen, openMenu }) => {
             type="button"
         >
             {isOpen ? (
-                <StyledIcon src={TransparentCloseButton} alt="zamknij menu" />
+                <StyledIcon src={CloseIcon} alt="zamknij menu" />
             ) : (
-                <StyledIcon src={TransparentHamburgerIcon} alt="otwórz menu" />
+                <StyledIcon src={OpenIcon} alt="otwórz menu" />
             )}
         </StyledHamburgerButton>
     );
