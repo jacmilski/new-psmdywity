@@ -88,7 +88,7 @@ const DywityPage = () => {
     return (
         <>
             <FilliateInfoBanner data={data} />
-            <ContentLayout>
+            <ContentLayout footer={undefined}>
                 <Aside gallery={undefined} filliate={true} />
                 <NewsContainer>
                     <NewsfeedHeadline
@@ -108,7 +108,7 @@ const DywityPage = () => {
                     }
                 </NewsContainer>
             </ContentLayout>
-            <ContentLayout>
+            <ContentLayout footer={undefined}>
                 <FilliatePageFooter
                     data={datoCmsDywityFooter}
                     address={dywityData}

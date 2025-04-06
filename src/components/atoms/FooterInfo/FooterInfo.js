@@ -10,7 +10,7 @@ const FooterInfo = () => {
         <StyledFooterInfo>
             <StyledInfoWrapper>
                 <StyledInfoContent>
-                    © 2023 Samorządowa Szkoła Muzyczna I stopnia w Dywitach w
+                    © 2025 Samorządowa Szkoła Muzyczna I stopnia w Dywitach w
                     Powiecie Olsztyńskim | Projekt i wykonanie:{' '}
                     <strong>Jacek Michalski</strong>
                 </StyledInfoContent>

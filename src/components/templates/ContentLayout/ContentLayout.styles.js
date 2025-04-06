@@ -6,6 +6,10 @@ export const StyledContentLayout = styled.div`
 
     @media only screen and (min-width: 768px) {
         display: flex;
+        flex-direction: ${({
+            // @ts-ignore
+            $footer,
+        }) => ($footer ? 'column' : 'row')};
         width: 85%;
     }
 

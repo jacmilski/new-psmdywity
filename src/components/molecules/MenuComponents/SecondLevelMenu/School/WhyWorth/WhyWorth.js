@@ -27,8 +27,6 @@ const WhyWorth = () => {
         }
     `);
 
-    console.log(whyWorthArticles);
-
     return (
         <StyledWhyWorthWrapper>
             <TitleBanner title={`Dlaczego warto uczyć się w naszej szkole?`} />

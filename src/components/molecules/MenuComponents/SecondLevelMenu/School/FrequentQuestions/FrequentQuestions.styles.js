@@ -14,6 +14,7 @@ export const StyledContentWrapper = styled.div`
 
 export const StyledFAQWrapper = styled.div`
     width: 100%;
+    padding: 20px 10px 40px;
 
     & .faq-content {
         width: 100%;

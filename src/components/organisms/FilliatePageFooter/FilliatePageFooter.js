@@ -26,6 +26,7 @@ const FilliatePageFooter = ({ data, address }) => {
                     </LeftColumnContent>
                 ))}
             </LeftColumnWrapper>
+
             <RightColumnWrapper>
                 <Heading type={'h3'} title={'Kontakt'} teachers={undefined} />
                 <RightColumnContent>
