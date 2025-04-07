@@ -15,7 +15,7 @@ import MoveRightIcon from '../../../images/icons/icons8-move-right-24.png';
 // @ts-ignore
 import MoveLeftIcon from '../../../images/icons/icons8-move-left-24.png';
 
-const AsideMenuMobile = ({ isOpen, showMenu, isShownMenu }) => {
+const AsideMenuMobile = ({ isOpen, showMenu, isShownMenu, openMenu }) => {
     const {
         allDatoCmsAsideMenu: { nodes },
     } = useStaticQuery(graphql`
@@ -85,58 +85,98 @@ const AsideMenuMobile = ({ isOpen, showMenu, isShownMenu }) => {
             />
             <StyledNavigationMenuRoot orientation="vertical">
                 <StyledNavigationMenuList>
-                    {elems.map((elem) => (
-                        <StyledNavigationMenuItem key={elem.originalId}>
-                            {(elem.webPageLink &&
-                                elem.slug === labels.TREASURY_OF_IDEAS) ||
-                            elem.slug === labels.CREATIVITY_ZONE ||
-                            elem.slug === labels.EVENTS_ARCHIVE ||
-                            elem.slug === labels.CEA ||
-                            elem.slug === labels.ELECTRONIC_DIARY ? (
-                                <StyledNavigationMenuTrigger
-                                    key={elem.originalId}
-                                >
-                                    <a
-                                        href={
-                                            elem.webPageLink &&
-                                            elem.webPageLink.webPageAddress
-                                        }
-                                        target="_blanc"
-                                        rel="noreferrer"
+                    {elems.map((elem) => {
+                        console.log(
+                            elem.webPageLink && elem.webPageLink.webPageAddress
+                        );
+                        return (
+                            <StyledNavigationMenuItem key={elem.originalId}>
+                                {(elem.webPageLink &&
+                                    elem.slug === labels.TREASURY_OF_IDEAS) ||
+                                elem.slug === labels.CREATIVITY_ZONE ||
+                                elem.slug === labels.EVENTS_ARCHIVE ||
+                                elem.slug === labels.ELECTRONIC_DIARY ? (
+                                    <StyledNavigationMenuTrigger
+                                        key={elem.originalId}
+                                    >
+                                        <a
+                                            href={
+                                                elem.webPageLink &&
+                                                elem.webPageLink.webPageAddress
+                                            }
+                                            onClick={() => openMenu(false)}
+                                            target="_blanc"
+                                            rel="noreferrer"
+                                        >
+                                            {elem.title}
+                                        </a>
+                                    </StyledNavigationMenuTrigger>
+                                ) : elem.slug === labels.SCHOOL_STAFF ||
+                                  elem.slug === labels.SCHOOL ||
+                                  elem.slug === labels.OUR_ACHIEVEMENTS ||
+                                  elem.slug === labels.EVENTS_ARCHIVE ||
+                                  elem.slug === labels.SCHOOL_REGULATIONS ? (
+                                    <StyledNavigationMenuTrigger
+                                        className="link"
+                                        onClick={() => openMenu(false)}
                                     >
                                         {elem.title}
-                                    </a>
-                                </StyledNavigationMenuTrigger>
-                            ) : elem.slug === labels.SCHOOL_STAFF ||
-                              elem.slug === labels.SCHOOL ||
-                              elem.slug === labels.OUR_ACHIEVEMENTS ||
-                              elem.slug === labels.EVENTS_ARCHIVE ||
-                              elem.slug === labels.SCHOOL_REGULATIONS ? (
-                                <StyledNavigationMenuTrigger className="link">
-                                    {elem.title}
-                                </StyledNavigationMenuTrigger>
-                            ) : (
-                                <StyledNavigationMenuTrigger
-                                    key={elem.originalId}
-                                >
-                                    <Link to={`/${elem.slug}/`}>
-                                        {elem.title}
-                                    </Link>
-                                </StyledNavigationMenuTrigger>
-                            )}
-                            {elem.submenuElement.map((elem) => (
-                                <StyledNavigationMenuContent
-                                    key={elem.originalId}
-                                >
-                                    <StyledNavigationMenuTrigger>
-                                        <Link to={`/${elem.slug}/`}>
+                                    </StyledNavigationMenuTrigger>
+                                ) : (
+                                    <StyledNavigationMenuTrigger
+                                        key={elem.originalId}
+                                    >
+                                        <Link
+                                            to={`/${elem.slug}/`}
+                                            onClick={() => openMenu(false)}
+                                        >
                                             {elem.title}
                                         </Link>
                                     </StyledNavigationMenuTrigger>
-                                </StyledNavigationMenuContent>
-                            ))}
-                        </StyledNavigationMenuItem>
-                    ))}
+                                )}
+                                {elem.submenuElement.map((elem) => (
+                                    <StyledNavigationMenuContent
+                                        key={elem.originalId}
+                                    >
+                                        {(elem.webPageLink &&
+                                            elem.slug ===
+                                                labels.SUPERVISORY_ORGAN) ||
+                                        elem.slug === labels.LEADING_ORGAN ? (
+                                            <StyledNavigationMenuTrigger
+                                                key={elem.originalId}
+                                            >
+                                                <a
+                                                    href={
+                                                        elem.webPageLink &&
+                                                        elem.webPageLink
+                                                            .webPageAddress
+                                                    }
+                                                    onClick={() =>
+                                                        openMenu(false)
+                                                    }
+                                                    target="_blanc"
+                                                    rel="noreferrer"
+                                                >
+                                                    {elem.title}
+                                                </a>
+                                            </StyledNavigationMenuTrigger>
+                                        ) : (
+                                            <StyledNavigationMenuTrigger>
+                                                <Link
+                                                    to={`/${elem.slug}/`}
+                                                    onClick={() =>
+                                                        openMenu(false)
+                                                    }
+                                                >
+                                                    {elem.title}
+                                                </Link>
+                                            </StyledNavigationMenuTrigger>
+                                        )}
+                                    </StyledNavigationMenuContent>
+                                ))}
+                            </StyledNavigationMenuItem>
+                        );
+                    })}
                 </StyledNavigationMenuList>
             </StyledNavigationMenuRoot>
         </StyledAsideMenuWrapper>

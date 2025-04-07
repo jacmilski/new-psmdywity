@@ -7,7 +7,7 @@ import { StyledHeaderWrapper } from './HeaderMobile.styles';
 import useIsSSR from '../../../hooks/useIsSSR';
 import useWindowWidth from '../../../hooks/useWindowWidth';
 
-const HeaderMobile = ({ isOpen }) => {
+const HeaderMobile = ({ isOpen, openMenu }) => {
     const isSSR = useIsSSR();
     const windowWidth = useWindowWidth(isSSR);
 
@@ -36,36 +36,43 @@ const HeaderMobile = ({ isOpen }) => {
                             children={NavLabels.START}
                             ariaLabel={`Przełącz na stronę główną`}
                             className={undefined}
+                            // @ts-ignore
+                            openMenu={() => openMenu()}
                         />
                         <FilliateLink
                             url={`/dywity`}
                             children={NavLabels.DYWITY}
                             ariaLabel={`Przełącz na stronę Dywit`}
                             className={undefined}
+                            openMenu={() => openMenu()}
                         />
                         <FilliateLink
                             url={`/barczewo`}
                             children={NavLabels.BARCZEWO}
                             ariaLabel={`Przełącz na stronę Barczewa`}
                             className={undefined}
+                            openMenu={() => openMenu()}
                         />
                         <FilliateLink
                             url={`/biskupiec`}
                             children={NavLabels.BISKUPIEC}
                             ariaLabel={`Przełącz na stronę Biskupca`}
                             className={undefined}
+                            openMenu={() => openMenu()}
                         />
                         <FilliateLink
                             url={`/olsztynek`}
                             children={NavLabels.OLSZTYNEK}
                             ariaLabel={`Przełącz na stronę Olsztynka`}
                             className={undefined}
+                            openMenu={() => openMenu()}
                         />
                         <FilliateLink
                             url={`/dobre-miasto`}
                             children={NavLabels.DOBRE_MIASTO}
                             ariaLabel={`Przełącz na stronę Dobrego Miasta`}
                             className={undefined}
+                            openMenu={() => openMenu()}
                         />
                     </div>
                 </div>
@@ -73,6 +80,7 @@ const HeaderMobile = ({ isOpen }) => {
                     isOpen={isOpen}
                     // @ts-ignore
                     showMenu={() => setShowAsideMenu(!showAsideMenu)}
+                    openMenu={openMenu}
                     isShownMenu={showAsideMenu}
                 />
             </div>

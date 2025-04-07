@@ -33,7 +33,10 @@ const GlobalLayout = ({ children }) => {
                 {!isOpen ? (
                     <Header isOpen={isOpen} />
                 ) : isOpen && windowWidth <= 768 ? (
-                    <HeaderMobile isOpen={isOpen} />
+                    <HeaderMobile
+                        isOpen={isOpen}
+                        openMenu={() => setIsOpen(!isOpen)}
+                    />
                 ) : (
                     <Header isOpen={isOpen} />
                 )}
