@@ -1,6 +1,13 @@
 import styled from 'styled-components';
-import { titleBannerStyles } from '../../../../../../styles/sharedStyles';
+import {
+    schoolStuffContentStyles,
+    titleBannerStyles,
+} from '../../../../../../styles/sharedStyles';
 
 export const StyledMusicianFirstClassGallery = styled.div`
     ${titleBannerStyles};
+`;
+
+export const StyledContentWrapper = styled.div`
+    ${schoolStuffContentStyles}
 `;

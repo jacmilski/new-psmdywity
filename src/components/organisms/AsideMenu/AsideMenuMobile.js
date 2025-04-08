@@ -86,9 +86,6 @@ const AsideMenuMobile = ({ isOpen, showMenu, isShownMenu, openMenu }) => {
             <StyledNavigationMenuRoot orientation="vertical">
                 <StyledNavigationMenuList>
                     {elems.map((elem) => {
-                        console.log(
-                            elem.webPageLink && elem.webPageLink.webPageAddress
-                        );
                         return (
                             <StyledNavigationMenuItem key={elem.originalId}>
                                 {(elem.webPageLink &&
@@ -120,7 +117,12 @@ const AsideMenuMobile = ({ isOpen, showMenu, isShownMenu, openMenu }) => {
                                         className="link"
                                         onClick={() => openMenu(false)}
                                     >
-                                        {elem.title}
+                                        <Link
+                                            to={`/${elem.slug}/`}
+                                            onClick={() => openMenu(false)}
+                                        >
+                                            {elem.title}
+                                        </Link>
                                     </StyledNavigationMenuTrigger>
                                 ) : (
                                     <StyledNavigationMenuTrigger
@@ -134,41 +136,34 @@ const AsideMenuMobile = ({ isOpen, showMenu, isShownMenu, openMenu }) => {
                                         </Link>
                                     </StyledNavigationMenuTrigger>
                                 )}
-                                {elem.submenuElement.map((elem) => (
+                                {elem.submenuElement.map((element) => (
                                     <StyledNavigationMenuContent
                                         key={elem.originalId}
                                     >
-                                        {(elem.webPageLink &&
+                                        {(element.webPageLink &&
                                             elem.slug ===
                                                 labels.SUPERVISORY_ORGAN) ||
-                                        elem.slug === labels.LEADING_ORGAN ? (
+                                        element.slug ===
+                                            labels.LEADING_ORGAN ? (
                                             <StyledNavigationMenuTrigger
                                                 key={elem.originalId}
                                             >
                                                 <a
                                                     href={
-                                                        elem.webPageLink &&
-                                                        elem.webPageLink
+                                                        element.webPageLink &&
+                                                        element.webPageLink
                                                             .webPageAddress
-                                                    }
-                                                    onClick={() =>
-                                                        openMenu(false)
                                                     }
                                                     target="_blanc"
                                                     rel="noreferrer"
                                                 >
-                                                    {elem.title}
+                                                    {element.title}
                                                 </a>
                                             </StyledNavigationMenuTrigger>
                                         ) : (
                                             <StyledNavigationMenuTrigger>
-                                                <Link
-                                                    to={`/${elem.slug}/`}
-                                                    onClick={() =>
-                                                        openMenu(false)
-                                                    }
-                                                >
-                                                    {elem.title}
+                                                <Link to={`/${element.slug}/`}>
+                                                    {element.title}
                                                 </Link>
                                             </StyledNavigationMenuTrigger>
                                         )}
