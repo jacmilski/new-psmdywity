@@ -128,11 +128,32 @@ const AsideMenu = ({ gallery, filliate, isOpen, widthOfWindow }) => {
                                 <StyledNavigationMenuContent
                                     key={elem.originalId}
                                 >
-                                    <StyledNavigationMenuTrigger>
-                                        <Link to={`/${elem.slug}/`}>
-                                            {elem.title}
-                                        </Link>
-                                    </StyledNavigationMenuTrigger>
+                                    {(elem.webPageLink &&
+                                        elem.slug ===
+                                            labels.SUPERVISORY_ORGAN) ||
+                                    elem.slug === labels.LEADING_ORGAN ? (
+                                        <StyledNavigationMenuTrigger
+                                            key={elem.originalId}
+                                        >
+                                            <a
+                                                href={
+                                                    elem.webPageLink &&
+                                                    elem.webPageLink
+                                                        .webPageAddress
+                                                }
+                                                target="_blanc"
+                                                rel="noreferrer"
+                                            >
+                                                {elem.title}
+                                            </a>
+                                        </StyledNavigationMenuTrigger>
+                                    ) : (
+                                        <StyledNavigationMenuTrigger>
+                                            <Link to={`/${elem.slug}/`}>
+                                                {elem.title}
+                                            </Link>
+                                        </StyledNavigationMenuTrigger>
+                                    )}
                                 </StyledNavigationMenuContent>
                             ))}
                         </StyledNavigationMenuItem>
