@@ -48,17 +48,21 @@ const Gallery = ({ data, title, subtitle, teachers, achievements }) => {
                     // @ts-ignore
                     $teachers={teachers}
                 >
-                    <Heading
-                        type={teachers ? 'h2' : 'h1'}
-                        title={title}
-                        // @ts-ignore
-                        teachers={teachers}
-                    />
-                    <Heading
-                        type={teachers ? 'h3' : 'h2'}
-                        title={subtitle}
-                        teachers={undefined}
-                    />
+                    {title ? (
+                        <Heading
+                            type={teachers ? 'h2' : 'h1'}
+                            title={title}
+                            // @ts-ignore
+                            teachers={teachers}
+                        />
+                    ) : null}
+                    {subtitle ? (
+                        <Heading
+                            type={teachers ? 'h3' : 'h2'}
+                            title={subtitle}
+                            teachers={undefined}
+                        />
+                    ) : null}
                     <Galleria
                         ref={galleria}
                         value={images}

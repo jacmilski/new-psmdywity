@@ -23,7 +23,14 @@ const Heading = ({ type, title, teachers }) => {
             return <StyledHeading2 $type={type}>{title}</StyledHeading2>;
         default:
             // @ts-ignore
-            return <StyledHeading3 $type={type}>{title}</StyledHeading3>;
+            return (
+                <StyledHeading3
+                    // @ts-ignore
+                    $type={type}
+                >
+                    {title}
+                </StyledHeading3>
+            );
     }
 };
 
