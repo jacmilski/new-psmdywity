@@ -111,7 +111,8 @@ export const StyledBottomWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 50px 0;
-    background-color: var(--sage-3); //#125851;
+    background-color: var(--sage-3);
+    background-image: linear-gradient(18deg, #f4ce14, var(--green-2) 85%);
 
     & .why-worth,
     & .slider-wrapper {
@@ -119,7 +120,7 @@ export const StyledBottomWrapper = styled.div`
         margin: 0 auto;
 
         & h2 {
-            color: #eac953; //var(--yellow-3);
+            color: #eac953;
         }
     }
 
@@ -130,7 +131,7 @@ export const StyledBottomWrapper = styled.div`
         @media only screen and (min-width: 768px) {
             margin-top: 60px;
         }
-        color: var(--gray-1);
+        color: var(--gray-3);
     }
 
     @media only screen and (min-width: 992px) {
@@ -176,7 +177,7 @@ export const StyledBottomWrapper = styled.div`
         text-align: center;
         font-size: var(--font-size-18);
         padding: 7px 0;
-        color: var(--gray-1);
+        color: var(--gray-3);
     }
 
     & .link {

@@ -40,7 +40,6 @@ export const StyledNav = styled.nav`
     }
 
     @media only screen and (min-width: 768px) {
-        //przerobić to bo to nie odnosi się już do div-a z linkami
         height: auto;
         width: 100%;
         position: relative;

@@ -34,6 +34,37 @@ export const StyledNewsfeed = styled.div`
             font-style: italic;
         }
     }
+
+    & .btn-show-more {
+        cursor: pointer;
+        color: var(--green-2);
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 1;
+            font-weight: 500;
+        }
+    }
+`;
+
+export const StyledContentWrapper = styled.div`
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+
+    ${({
+        // @ts-ignore
+        $visible,
+    }) =>
+        $visible
+            ? css`
+                  visibility: visible;
+                  opacity: 1;
+              `
+            : css`
+                  opacity: 0;
+                  visibility: hidden;
+              `};
 `;
 
 export const StyledMediaWrapper = styled.div`

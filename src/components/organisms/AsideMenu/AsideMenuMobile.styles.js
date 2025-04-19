@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const StyledAsideMenuWrapper = styled.div`
     position: relative;
     display: flex;
-    background-color: var(--yellow-3);
+    background-image: linear-gradient(45deg, #f4ce14 30%, var(--green-2));
     width: 100%;
     padding: 20px;
     min-width: 210px;

@@ -8,7 +8,8 @@ export const StyledAsideMenuWrapper = styled.div`
         // @ts-ignore
         $widthOfWindow,
     }) => ($isOpen && $widthOfWindow < 768 ? 'flex' : 'none')};
-    background-color: var(--yellow-3);
+    //background-color: var(--yellow-3);
+    background-image: linear-gradient(45deg, #f4ce14 30%, var(--green-2));
     width: 100%;
     padding: ${({
         // @ts-ignore
@@ -71,3 +72,5 @@ export const StyledNavigationMenuTrigger = styled(NavigationMenu.Trigger)`
 export const StyledNavigationMenuContent = styled(NavigationMenu.Content)`
     margin-left: 15px;
 `;
+
+/* //#f4ce14, #e9b824 */

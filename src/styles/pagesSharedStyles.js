@@ -13,6 +13,6 @@ export const NewsContainer = Styled.section`
 export const HorizontalDivider = Styled.div`
     width: 50%;
     height: 1px;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: var(--green-2);
 `;
